@@ -41,13 +41,6 @@ Sitio estático listo para publicarse en GitHub Pages con HTML/CSS/JS puro.
 
 > Las páginas de proyecto muestran el PDF original embebido. Si falta un archivo, verás un aviso y un botón de descarga.
 
-## Nota importante sobre GitHub Pages
-
-Este sitio está preparado con rutas **relativas** para funcionar correctamente cuando se publica como
-`https://usuario.github.io/nombre-del-repo/` (project pages).
-
-Si cambias archivos manualmente, evita usar rutas absolutas como `/assets/...` o `/pdfs/...` porque en project pages apuntan al dominio raíz y rompen imágenes/PDFs.
-
 ## Deploy en GitHub Pages
 
 ### Opción A (Branch deploy)

@@ -73,7 +73,7 @@ a { color: inherit; }
   text-align: center;
   color: #fff;
   position: relative;
-  background: url('../assets/img/hero.jpg') center / cover no-repeat fixed;
+  background: url('/assets/img/hero.jpg') center / cover no-repeat fixed;
 }
 .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.15); }
 .hero-content { position: relative; max-width: 860px; padding: 1.5rem; }
