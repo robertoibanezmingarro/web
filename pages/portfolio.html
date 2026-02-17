@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Roberto Ibáñez Mingarro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header solid" id="site-header">
+      <div class="header-inner">
+        <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="../index.html" data-nav="home">Home</a><a href="./portfolio.html" data-nav="portfolio">Portfolio</a><a href="./resume.html" data-nav="resume">Resume</a><a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <div class="social-links">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav aria-label="Navegación móvil"><a href="../index.html" data-nav="home">Home</a><a href="./portfolio.html" data-nav="portfolio">Portfolio</a><a href="./resume.html" data-nav="resume">Resume</a><a href="./contact.html" data-nav="contact">Contact</a></nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main section-narrow">
+      <h1 class="page-title">Portfolio</h1>
+      <p class="lead">Access each project in full-document format. PDFs are displayed directly so no technical detail is omitted.</p>
+      <section class="project-grid">
+        <a class="project-card" href="./mp4.html"><img src="../assets/img/mp4-thumb.jpg" alt="MP4 thumbnail" /><h3>MP4 PLAYER REVERSE ENGINEERING</h3><p>Original portfolio PDF embedded page by page.</p></a>
+        <a class="project-card" href="./sailboat.html"><img src="../assets/img/sailboat-thumb.jpg" alt="Sailboat thumbnail" /><h3>AUTONOMOUS SAILBOAT CONTROL SYSTEM (STM32)</h3><p>Complete embedded-control project dossier.</p></a>
+        <a class="project-card" href="./wattmeter.html"><img src="../assets/img/wattmeter-thumb.jpg" alt="Wattmeter thumbnail" /><h3>DIGITAL WATTMETER PCB DESIGN (STM32 + KICAD)</h3><p>Full schematic, PCB, and firmware evidence.</p></a>
+        <a class="project-card" href="./resume.html"><img src="../assets/img/resume-thumb.jpg" alt="Resume thumbnail" /><h3>RESUME / CV</h3><p>Academic and technical profile in original PDF.</p></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav>
+      <p>© 2026 Roberto Ibáñez Mingarro</p>
+      <div class="social-links"><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com" target="_blank" rel="noopener">GitHub</a><a href="mailto:roberto@example.com">Email</a></div>
+    </footer>
+  </body>
+</html>
