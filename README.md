@@ -41,7 +41,6 @@ Sitio estático listo para publicarse en GitHub Pages con HTML/CSS/JS puro.
 
 > Las páginas de proyecto muestran el PDF original embebido. Si falta un archivo, verás un aviso y un botón de descarga.
 
-
 ## Nota importante sobre GitHub Pages
 
 Este sitio está preparado con rutas **relativas** para funcionar correctamente cuando se publica como
@@ -72,31 +71,3 @@ python3 -m http.server 8000
 ```
 
 Abre `http://localhost:8000`.
-
-## Solución de problemas (PR y conflictos)
-
-Si GitHub muestra `This branch has conflicts that must be resolved`, significa que tu rama del PR y `main` tienen cambios en los mismos archivos y GitHub no puede hacer merge automático.
-
-### Qué hacer
-
-1. Trae cambios de `main` a tu rama del PR y resuelve conflictos en local.
-2. Haz commit de la resolución.
-3. Haz push de la rama.
-4. El PR se actualizará y desaparecerá el bloqueo de merge.
-
-Ejemplo:
-
-```bash
-git checkout <tu-rama-pr>
-git fetch origin
-git merge origin/main
-# resolver conflictos en los archivos indicados
-git add .
-git commit -m "Resolve merge conflicts with main"
-git push origin <tu-rama-pr>
-```
-
-### Sobre el mensaje "placeholder PR message"
-
-Si ves el texto `Codex generated this pull request...placeholder PR message`, no es un error de tu web: es solo la descripción automática del PR que falló al generarse.
-Puedes editar el título y la descripción del PR manualmente desde GitHub sin afectar al código.
