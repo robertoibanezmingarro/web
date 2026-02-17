@@ -77,3 +77,5 @@ Abre `http://localhost:8000`.
 1. Revisa que los archivos estén subidos con los nombres exactos en `assets/img/` y `pdfs/`.
 2. Espera 1-2 minutos a que GitHub Pages regenere y recarga con `Ctrl + F5`.
 3. Este sitio también intenta fallback automático si subiste imágenes en `assets/` o PDFs en `PDFs/`, pero lo recomendado es mantener la estructura oficial.
+
+4. Si abres una página de proyecto manualmente, usa siempre la URL con el nombre del repo, por ejemplo: `https://usuario.github.io/web/pages/mp4.html` (no `https://usuario.github.io/pages/mp4.html`).
