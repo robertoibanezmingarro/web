@@ -76,7 +76,12 @@ a { color: inherit; }
   background: url('../assets/img/hero.jpg') center / cover no-repeat fixed;
 }
 .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.15); }
-.hero-content { position: relative; max-width: 860px; padding: 1.5rem; }
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 2rem 2.25rem;
+  background: rgba(0, 0, 0, 0.75);
+}
 .hero h1 { font-size: clamp(2rem, 6vw, 4rem); margin: 0 0 1rem; font-weight: 500; }
 .hero p { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
 
