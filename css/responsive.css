@@ -7,6 +7,43 @@
   .section-narrow { padding: 3.5rem 1.25rem; }
   .hero-content { padding: 2rem 1.5rem 2rem clamp(6%, 7vw, 10%); }
 
+  /* Remove side TOC on phone/tablet across project pages */
+  .project-toc {
+    display: none;
+  }
+
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-jump {
+    display: none !important;
+  }
+
+  .project-page .project-hero,
+  .project-page .project-hero-intro,
+  .project-page .project-spec-card,
+  .project-page .project-content,
+  .project-page .project-content .split-section,
+  .project-page .project-content .split-section article,
+  .project-page .project-content .split-section figcaption {
+    text-align: center;
+  }
+
+  .project-page .project-hero-grid,
+  .project-page .project-content .split-section {
+    justify-items: center;
+  }
+
+  .project-page .tech-chips {
+    justify-content: center;
+  }
+
+  .project-page .project-content ul {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
   .header-inner,
   .project-hero-grid,
   .project-layout,
@@ -61,7 +98,11 @@
   .pdf-frame { height: 82vh; }
 
   /* === Card pattern visuals only === */
-  .m-card {
+  .m-card,
+  .project-content > .split-section,
+  .resume-container > section,
+  .contact-main > section,
+  .page-main.section-narrow > section {
     background: rgba(0, 0, 0, 0.035);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
@@ -72,7 +113,9 @@
 
   /* Mobile-safe media normalization for split rows and generic figures */
   .m-card .split-media,
-  .m-card figure {
+  .m-card figure,
+  .project-content > .split-section .split-media,
+  .project-content > .split-section figure {
     display: block !important;
     width: 100%;
     max-width: 100%;
@@ -84,7 +127,9 @@
   .m-card .split-media img,
   .m-card figure img,
   .m-card picture img,
-  .m-card > img {
+  .m-card > img,
+  .project-content > .split-section .split-media img,
+  .project-content > .split-section figure img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -97,7 +142,8 @@
     border-radius: 12px;
   }
 
-  .m-card picture {
+  .m-card picture,
+  .project-content > .split-section picture {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -106,7 +152,9 @@
   .m-card .split-media figcaption,
   .m-card figcaption,
   .m-card .caption,
-  .m-card .image-caption {
+  .m-card .image-caption,
+  .project-content > .split-section .split-media figcaption,
+  .project-content > .split-section figcaption {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -134,13 +182,25 @@
   }
 
   /* Ritmo interno: separaciones coherentes */
-  .m-card > * + * {
+  .m-card > * + *,
+  .project-content > .split-section > * + *,
+  .resume-container > section > * + *,
+  .contact-main > section > * + *,
+  .page-main.section-narrow > section > * + * {
     margin-top: 0.85rem;
   }
 
   /* Si hay listas dentro */
   .m-card ul,
-  .m-card ol {
+  .m-card ol,
+  .project-content > .split-section ul,
+  .project-content > .split-section ol,
+  .resume-container > section ul,
+  .resume-container > section ol,
+  .contact-main > section ul,
+  .contact-main > section ol,
+  .page-main.section-narrow > section ul,
+  .page-main.section-narrow > section ol {
     padding-left: 1.2rem;
   }
 }
@@ -153,6 +213,14 @@
 
   /* En móvil, cards un poco más compactas */
   .m-card {
+    border-radius: 14px;
+    padding: 1rem;
+  }
+
+  .project-content > .split-section,
+  .resume-container > section,
+  .contact-main > section,
+  .page-main.section-narrow > section {
     border-radius: 14px;
     padding: 1rem;
   }
