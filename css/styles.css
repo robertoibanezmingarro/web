@@ -144,14 +144,14 @@ a { color: inherit; }
 }
 .pdf-viewer-panel {
   padding: 1rem 1.25rem;
-  max-width: 980px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .pdf-toolbar { display: flex; gap: .75rem; margin-bottom: 1rem; flex-wrap: wrap; }
 .button { border: 1px solid #000; padding: .5rem .75rem; text-decoration: none; font-size: .9rem; }
 .pdf-frame {
   width: 100%;
-  height: min(62vh, 760px);
+  height: min(70vh, 860px);
   border: 1px solid var(--line);
 }
 .pdf-missing { color: #8a0000; }
