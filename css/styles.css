@@ -357,6 +357,24 @@ a { color: inherit; }
   color: #5a5a5a;
 }
 
+
+.project-page--mp4 .project-layout {
+  grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
+}
+
+.project-page--mp4 .project-toc {
+  top: calc(5rem + .8rem);
+  padding: .9rem .95rem;
+}
+
+.project-page--mp4 .project-toc ol {
+  gap: .3rem;
+}
+
+.project-page--mp4 .project-toc li {
+  line-height: 1.32;
+}
+
 .project-actions {
   margin-top: .4rem;
   display: flex;
