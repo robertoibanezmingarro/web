@@ -13,6 +13,21 @@
   .split-section {
     min-width: 0;
   }
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  iframe,
+  video,
+  embed,
+  object {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /* Mobile/tablet: encapsular bloques lógicos en cards */
@@ -45,28 +60,77 @@
   }
   .pdf-frame { height: 82vh; }
 
-  /* === Card pattern === */
+  /* === Card pattern visuals only === */
   .m-card {
     background: rgba(0, 0, 0, 0.035);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 1.15rem;
     margin: 1rem 0;
-  }
-
-  /* Evita que el contenido se salga y mejora composición */
-  .m-card {
     overflow: hidden;
   }
 
-  /* Integración de imágenes dentro de cards */
-  .m-card img,
-  .m-card picture,
+  /* Mobile-safe media normalization for split rows and generic figures */
+  .m-card .split-media,
   .m-card figure {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    float: none !important;
+    clear: both;
+  }
+
+  .m-card .split-media img,
+  .m-card figure img,
+  .m-card picture img,
+  .m-card > img {
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    float: none !important;
+    clear: both;
     border-radius: 12px;
+  }
+
+  .m-card picture {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .m-card .split-media figcaption,
+  .m-card figcaption,
+  .m-card .caption,
+  .m-card .image-caption {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 0.65rem;
+    float: none !important;
+    clear: both;
+  }
+
+  /* Keep split rows stacked on small viewports */
+  .split-row,
+  .split-row.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .split-row.reverse .split-media,
+  .split-row.reverse .split-copy {
+    order: initial;
+  }
+
+  .container,
+  .section,
+  .section-narrow {
+    overflow-x: hidden;
   }
 
   /* Ritmo interno: separaciones coherentes */
@@ -90,24 +154,6 @@
   /* En móvil, cards un poco más compactas */
   .m-card {
     border-radius: 14px;
-    padding: 1.0rem;
-  }
-}
-
-/* Extra safeguards for small viewports only */
-@media (max-width: 1024px) {
-  html,
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  img,
-  iframe,
-  video,
-  embed,
-  object {
-    max-width: 100%;
-    height: auto;
+    padding: 1rem;
   }
 }
