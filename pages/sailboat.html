@@ -54,10 +54,52 @@
     <main id="main-content" class="page-main project-page">
       <section class="section-narrow project-hero">
         <h1 class="page-title">Autonomous Sailboat Control System using STM32</h1>
-        <p class="project-meta">Embedded systems portfolio article · deterministic control, sensing, communication, and actuation</p>
+        <div class="project-hero-grid">
+          <div class="project-hero-intro">
+            <p class="project-meta">Embedded systems portfolio article · deterministic control, sensing, communication, and actuation</p>
+            <p class="project-abstract">
+              Full-stack embedded implementation for an autonomous sailboat platform, integrating low-level STM32 firmware,
+              sensor acquisition, motor/servo actuation, wireless control, and power electronics into a deployable architecture.
+            </p>
+
+            <ul class="tech-chips" aria-label="Core technologies used in the project">
+              <li>STM32F103</li>
+              <li>Register-level firmware</li>
+              <li>I2C / UART / PWM</li>
+              <li>XBee RF</li>
+              <li>Power electronics</li>
+            </ul>
+          </div>
+
+          <aside class="project-spec-card" aria-label="Project specifications">
+            <dl>
+              <div><dt>Role</dt><dd>Embedded systems engineer</dd></div>
+              <div><dt>Scope</dt><dd>Firmware architecture, electronics integration, control loops, comms</dd></div>
+              <div><dt>Deliverables</dt><dd>Technical article + system validation narrative</dd></div>
+              <div><dt>Date</dt><dd>Portfolio project</dd></div>
+            </dl>
+          </aside>
+        </div>
       </section>
 
-      <section class="section-narrow split-section">
+      <div class="section-narrow project-layout">
+        <aside class="project-toc" aria-label="On this page">
+          <p class="project-toc-title">On this page</p>
+          <nav>
+            <ol id="project-toc-list"></ol>
+          </nav>
+        </aside>
+
+        <section class="project-jump" aria-label="Jump to section">
+          <label for="project-jump-select">Jump to section</label>
+          <select id="project-jump-select">
+            <option value="">Select a section</option>
+          </select>
+        </section>
+
+        <div class="project-content" id="project-content">
+
+      <section class="split-section">
         <article>
           <h2>System Overview &amp; Physical Platform</h2>
           <ul>
@@ -72,7 +114,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/sailboat/nucleo_f103.jpg" alt="NUCLEO F103-RB board" loading="lazy" />
           <figcaption>NUCLEO F103-RB board supporting the STM32F103 microcontroller.</figcaption>
@@ -87,7 +129,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Global Embedded Architecture</h2>
           <ul>
@@ -102,7 +144,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/sailboat/encoder_principle.png" alt="Incremental encoder measurement principle" loading="lazy" />
           <figcaption>Wind vane and incremental encoder measurement chain.</figcaption>
@@ -117,7 +159,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Roll Measurement – IMU</h2>
           <ul>
@@ -132,7 +174,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/sailboat/servo_pwm_signal.png" alt="Servo PWM timing signal" loading="lazy" />
           <figcaption>Standard RC servo control signal (20 ms period).</figcaption>
@@ -147,7 +189,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Yaw Rotation – Motor Driver</h2>
           <ul>
@@ -162,7 +204,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/sailboat/xbee_module.jpg" alt="XBee wireless module" loading="lazy" />
           <figcaption>Digi XBee 2.4 GHz RF module used as wireless communication interface.</figcaption>
@@ -177,7 +219,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Power Architecture</h2>
           <ul>
@@ -192,7 +234,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/sailboat/interface_pcb.png" alt="Custom STM32 interface PCB" loading="lazy" />
           <figcaption>Custom interface PCB integrating STM32 module and peripherals.</figcaption>
@@ -207,7 +249,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Engineering Outcomes</h2>
           <ul>
@@ -225,8 +267,75 @@
           </div>
         </div>
       </section>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+    <script>
+      (() => {
+        const content = document.querySelector('#project-content');
+        const tocList = document.querySelector('#project-toc-list');
+        const jumpSelect = document.querySelector('#project-jump-select');
+        if (!content || !tocList || !jumpSelect) return;
+
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent || heading.id;
+          li.appendChild(link);
+          tocList.appendChild(li);
+
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = heading.textContent || heading.id;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
+        });
+
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
+
+      })();
+    </script>
   </body>
 </html>
