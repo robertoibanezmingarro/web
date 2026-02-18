@@ -144,6 +144,19 @@
           white-space: normal;
         }
       }
+
+      @media (max-width: 1024px) {
+        .resume-age,
+        .resume-contact-separator {
+          display: none;
+        }
+
+        .resume-contact {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.2rem;
+        }
+      }
     </style>
   </head>
   <body data-page="resume">
@@ -193,13 +206,13 @@
 
       <div class="resume-shell" aria-label="Curriculum vitae">
         <section class="resume-header" aria-labelledby="resume-name">
-          <h2 id="resume-name">Roberto Ibáñez Mingarro (21 y.o.)</h2>
+          <h2 id="resume-name">Roberto Ibáñez Mingarro <span class="resume-age">(21 y.o.)</span></h2>
           <p class="resume-role">Electronics &amp; Embedded Systems Engineering Student</p>
           <p class="resume-contact">
             <a href="https://linkedin.com/in/robertoibanezmingarro" target="_blank" rel="noopener">linkedin.com/in/robertoibanezmingarro</a>
-            <span aria-hidden="true">|</span>
+            <span class="resume-contact-separator" aria-hidden="true">|</span>
             <a href="mailto:robertoibanezmingarro@gmail.com">robertoibanezmingarro@gmail.com</a>
-            <span aria-hidden="true">|</span>
+            <span class="resume-contact-separator" aria-hidden="true">|</span>
             <a href="tel:+34681631715">+34 681 631 715</a>
           </p>
         </section>
