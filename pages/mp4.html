@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MP4 Project PDF | Roberto Ibáñez Mingarro</title>
+    <title>Reverse Engineering of an MP4 Player Platform | Roberto Ibáñez Mingarro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
@@ -50,16 +50,168 @@
         </div>
       </div>
     </header>
-    <main id="main-content" class="page-main">
-      <section class="pdf-layout" data-pdf-page data-pdf-src="../pdfs/MP4_Portfolio.pdf" data-pdf-title="MP4 Portfolio">
-        <aside class="pdf-sidebar"><h2>Pages</h2><p class="small">Use your browser's native PDF page controls.</p></aside>
-        <div class="pdf-viewer-panel">
-          <div class="pdf-toolbar"><a class="button" href="../pdfs/MP4_Portfolio.pdf" download>Download PDF</a><a class="button" href="./portfolio.html">Back to portfolio</a></div>
-          <div class="pdf-viewer"></div>
-          <p class="pdf-missing" hidden>No se encontró el PDF en <code>../pdfs/MP4_Portfolio.pdf</code>. Añádelo para mostrar el documento completo.</p>
+
+    <main id="main-content" class="page-main project-page">
+      <section class="section-narrow project-hero">
+        <h1 class="page-title">Reverse Engineering of an MP4 Player Platform</h1>
+        <p class="project-subtitle">(SPC Internet 8488, 8 GB, 2014)</p>
+        <p class="project-meta">Jan. 2026 — Present · Personal reverse-engineering project</p>
+        <p class="project-abstract">
+          Engineering-focused reconstruction of a legacy consumer MP4 platform under limited public documentation,
+          combining physical teardown, CAD recreation, and iterative architecture validation.
+        </p>
+        <div class="project-actions">
+          <a class="btn btn-primary" href="../pdfs/MP4_Portfolio.pdf" download>Download Full PDF</a>
+          <a class="btn btn-secondary" href="./portfolio.html">Back to Portfolio</a>
+        </div>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Project Scope &amp; Motivation</h2>
+          <ul>
+            <li>Reverse engineer a consumer MP4 platform with scarce technical disclosure.</li>
+            <li>Reconstruct architecture and design intent across power, clocks, storage, audio, and IO.</li>
+            <li>Build an auditable technical baseline for subsequent schematic and simulation work.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/mp4/fig1-device.png" alt="SPC Internet 8488 MP4 player reference unit" loading="lazy" />
+          <figcaption>Fig. 1 — Physical reference unit used as the baseline for reverse engineering.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/mp4/fig2-pcb-photos.png" alt="PCB photos showing routing constraints and layer assumptions" loading="lazy" />
+          <figcaption>Fig. 2 — Real PCB photography indicates routing density consistent with a likely 4-layer stack.</figcaption>
+        </figure>
+        <article>
+          <h2>Physical Product Identification &amp; PCB Teardown</h2>
+          <ul>
+            <li>Analysis anchored to the exact commercial unit, storage variant, and exposed interfaces.</li>
+            <li>Teardown and high-resolution inspection highlighted routing bottlenecks and return-path patterns.</li>
+            <li>Early layer-stack hypothesis: signal/plane/plane/signal as the most plausible topology.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Documentation Search Under Scarce-Information Constraints</h2>
+          <ul>
+            <li>Multi-source triangulation across package markings, archived technical notes, and distributor remnants.</li>
+            <li>Cross-checked partial and adjacent-family datasheets to constrain unknown blocks.</li>
+            <li>Maintained explicit confidence levels to separate confirmed data from inferred assumptions.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/mp4/fig3-doc-recovery.png" alt="Documentation recovery and triangulation workflow" loading="lazy" />
+          <figcaption>Fig. 3 — Documentation recovery process combining fragmented sources into a coherent evidence trail.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/mp4/fig4-kicad-libs.png" alt="Custom KiCad symbols and footprints for non-standard components" loading="lazy" />
+          <figcaption>Fig. 4 — Custom KiCad symbols and footprints reconstructed for undocumented components and connectors.</figcaption>
+        </figure>
+        <article>
+          <h2>KiCad Library Reconstruction</h2>
+          <ul>
+            <li>Created missing symbol and footprint assets for uncommon packages and proprietary connectors.</li>
+            <li>Established naming/versioning discipline to keep evidence and CAD synchronized.</li>
+            <li>Recovered enough library coverage to support end-to-end schematic and PCB recreation.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Footprint Verification &amp; Mechanical Consistency</h2>
+          <ul>
+            <li>Executed overlay checks against calibrated high-resolution PCB photography.</li>
+            <li>Validated pitch, body size, and pin-1 orientation against available mechanical references.</li>
+            <li>Used discrepancy tracking to iteratively converge footprint fidelity before net-level reconstruction.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/mp4/fig5-overlay-verification.png" alt="Overlay verification process between PCB photos and CAD footprints" loading="lazy" />
+          <figcaption>Fig. 5 — Overlay workflow for dimensional and positional verification of reconstructed footprints.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/mp4/fig6-block-diagram.png" alt="Functional block diagram hypothesis for MP4 platform" loading="lazy" />
+          <figcaption>Fig. 6 — Iterative functional block hypothesis with confirmed versus inferred subsystems.</figcaption>
+        </figure>
+        <article>
+          <h2>Functional Block Diagram</h2>
+          <ul>
+            <li>Built an architecture hypothesis partitioned into validated and provisional blocks.</li>
+            <li>Used the diagram to prioritize unknown nets and measurement campaigns.</li>
+            <li>Maintained traceability between block assumptions and physical/documentary evidence.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Early Schematic Hypotheses &amp; Progressive Reconstruction</h2>
+          <ul>
+            <li>Drafted initial rails, decoupling, storage interface, and audio chain topologies.</li>
+            <li>Refined hypotheses as continuity work and pin mapping confirmed key nets.</li>
+            <li>Captured uncertainty explicitly to support simulation-ready revisions.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/mp4/fig7-schematic-hypotheses.png" alt="Initial schematic reconstruction hypotheses" loading="lazy" />
+          <figcaption>Fig. 7 — Preliminary schematic fragments showing progressive confidence-based reconstruction.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/mp4/fig8-kicad-3d.png" alt="Preliminary KiCad 3D model of reconstructed board" loading="lazy" />
+          <figcaption>Fig. 8 — Early KiCad 3D CAD model used to validate placement logic and connector clearances.</figcaption>
+        </figure>
+        <article>
+          <h2>Preliminary CAD Reconstruction (KiCad 3D)</h2>
+          <ul>
+            <li>Generated a first-pass 3D reconstruction to verify mechanical compatibility.</li>
+            <li>Checked connector alignment, keep-out behavior, and placement coherence.</li>
+            <li>Used 3D feedback to iterate footprint assumptions before detailed routing studies.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Current Status &amp; Next Steps</h2>
+          <ul>
+            <li>Continue identifying schematic fragments and validating behavior through LTspice experiments.</li>
+            <li>Reduce uncertainty around power sequencing, analog biasing, and interface constraints.</li>
+            <li>Final objective: propose a modernized architecture with stronger power efficiency, updated interfaces, improved ESD/EMC, and clean documentation.</li>
+          </ul>
+          <h2>Personal Context</h2>
+          <ul>
+            <li>Independent project developed outside formal studies with a portfolio-oriented scope.</li>
+            <li>This page presents representative fragments only; full evidence and rationale are documented in the PDF article.</li>
+            <li>All publication decisions are guided by ethical reverse-engineering boundaries and IP responsibility.</li>
+          </ul>
+        </article>
+        <div class="project-cta">
+          <h2>Full Technical Article (PDF)</h2>
+          <p>This page is the curated narrative. The PDF contains the complete portfolio article, methodology details, and supporting technical evidence.</p>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="../pdfs/MP4_Portfolio.pdf" download>Download MP4_Portfolio.pdf</a>
+            <a class="btn btn-secondary" href="../pdfs/MP4_Portfolio.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+          </div>
         </div>
       </section>
     </main>
+
     <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
   </body>
 </html>

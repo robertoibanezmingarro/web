@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="es">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Sailboat Project PDF | Roberto Ibáñez Mingarro</title><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../css/styles.css" /><script defer src="../js/main.js"></script></head>
-  <body data-page="portfolio"><a class="skip-link" href="#main-content">Saltar al contenido principal</a><header class="site-header" id="site-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autonomous Sailboat Control System using STM32 | Roberto Ibáñez Mingarro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header" id="site-header">
       <div class="header-inner">
         <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
 
@@ -38,5 +49,184 @@
           <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
         </div>
       </div>
-    </header><main id="main-content" class="page-main"><section class="pdf-layout" data-pdf-page data-pdf-src="../pdfs/Sailboat_Portfolio.pdf" data-pdf-title="Sailboat Portfolio"><aside class="pdf-sidebar"><h2>Pages</h2><p class="small">Use your browser's native PDF page controls.</p></aside><div class="pdf-viewer-panel"><div class="pdf-toolbar"><a class="button" href="../pdfs/Sailboat_Portfolio.pdf" download>Download PDF</a><a class="button" href="./portfolio.html">Back to portfolio</a></div><div class="pdf-viewer"></div><p class="pdf-missing" hidden>No se encontró el PDF en <code>../pdfs/Sailboat_Portfolio.pdf</code>. Añádelo para mostrar el documento completo.</p></div></section></main><footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer></body>
+    </header>
+
+    <main id="main-content" class="page-main project-page">
+      <section class="section-narrow project-hero">
+        <h1 class="page-title">Autonomous Sailboat Control System using STM32</h1>
+        <p class="project-meta">Embedded systems portfolio article · deterministic control, sensing, communication, and actuation</p>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>System Overview &amp; Physical Platform</h2>
+          <ul>
+            <li>The mechanical platform supports full 360° yaw rotation and free roll motion under wind-induced dynamics.</li>
+            <li>The embedded objective is to coordinate sail trimming, controlled rotation, and remote communication on the same constrained controller.</li>
+            <li>The project is defined as a hardware–software integration problem where mechanical behavior and electronics are co-engineered.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="/assets/img/sailboat/sailboat_platform.jpg" alt="Autonomous sailboat physical platform" loading="lazy" />
+          <figcaption>Complete autonomous sailboat platform with embedded electronics and sensors.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="/assets/img/sailboat/nucleo_f103.jpg" alt="NUCLEO F103-RB board" loading="lazy" />
+          <figcaption>NUCLEO F103-RB board supporting the STM32F103 microcontroller.</figcaption>
+        </figure>
+        <article>
+          <h2>Microcontroller Platform – STM32F103</h2>
+          <ul>
+            <li>The STM32F103 was selected intentionally over higher-end F4/H7 devices to enforce disciplined real-time design on limited resources.</li>
+            <li>Cortex-M3 core features, NVIC control, PWM-capable timers, and SPI/I2C/USART peripherals cover all mission requirements.</li>
+            <li>Firmware follows register-level control (no HAL abstraction) to keep timing, latency, and peripheral behavior fully deterministic.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Global Embedded Architecture</h2>
+          <ul>
+            <li>The system architecture integrates incremental encoder, IMU, RTC, XBee, servo actuation, motor driver, and ADC battery monitoring.</li>
+            <li>Each subsystem is mapped to dedicated peripherals and interrupt paths to avoid contention and non-deterministic scheduling.</li>
+            <li>The architecture is designed around predictable control loops rather than best-effort event handling.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="/assets/img/sailboat/global_architecture.png" alt="Global embedded architecture diagram" loading="lazy" />
+          <figcaption>Global embedded architecture of the sailboat control system.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="/assets/img/sailboat/encoder_principle.png" alt="Incremental encoder measurement principle" loading="lazy" />
+          <figcaption>Wind vane and incremental encoder measurement chain.</figcaption>
+        </figure>
+        <article>
+          <h2>Wind Angle Measurement (Incremental Encoder)</h2>
+          <ul>
+            <li>Quadrature decoding uses A/B channels plus index pulse for robust angular reference management.</li>
+            <li>With 360 periods and 4× decoding, the implementation improves effective resolution while preserving direction information.</li>
+            <li>Timer input capture and ISR-driven counting are structured for deterministic edge processing.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Roll Measurement – IMU</h2>
+          <ul>
+            <li>The platform compares LSM9DS1 over I2C versus ADXL345 over SPI for roll-angle estimation trade-offs.</li>
+            <li>Both sensor drivers were written from scratch, including multi-byte read flows and explicit bus-state handling.</li>
+            <li>Bus management policy prioritizes deterministic acquisition timing under concurrent peripheral activity.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="/assets/img/sailboat/imu_modules.jpg" alt="IMU modules comparison" loading="lazy" />
+          <figcaption>Accelerometer modules evaluated for roll angle estimation.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="/assets/img/sailboat/servo_pwm_signal.png" alt="Servo PWM timing signal" loading="lazy" />
+          <figcaption>Standard RC servo control signal (20 ms period).</figcaption>
+        </figure>
+        <article>
+          <h2>Sail Trim Control – PWM Servo</h2>
+          <ul>
+            <li>Sail control is generated with a 20 ms period and pulse width modulation between 1 ms and 2 ms.</li>
+            <li>TIM PWM configuration is performed at register level to guarantee repeatable update timing.</li>
+            <li>Duty-cycle updates are bounded to deterministic limits to preserve stable actuator behavior.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Yaw Rotation – Motor Driver</h2>
+          <ul>
+            <li>Yaw actuation combines direction control with PWM switching above 20 kHz to reduce audible noise.</li>
+            <li>The dedicated driver board separates power and control stages for cleaner switching behavior.</li>
+            <li>Layout and routing decisions include EMI-aware partitioning and current-path control.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="/assets/img/sailboat/motor_driver_board.png" alt="Motor driver board layout and schematic" loading="lazy" />
+          <figcaption>Motor driver PCB layout and power stage schematic.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="/assets/img/sailboat/xbee_module.jpg" alt="XBee wireless module" loading="lazy" />
+          <figcaption>Digi XBee 2.4 GHz RF module used as wireless communication interface.</figcaption>
+        </figure>
+        <article>
+          <h2>Wireless Communication – XBee</h2>
+          <ul>
+            <li>Communication is implemented on UART full duplex with a 100 ms command cycle.</li>
+            <li>Reception uses interrupt-driven framing to reduce polling overhead and latency jitter.</li>
+            <li>Status reporting is integrated into the same link for supervisory visibility and command acknowledgement.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Power Architecture</h2>
+          <ul>
+            <li>The electrical chain starts from a 12 V input with dedicated protection stage.</li>
+            <li>Regulation generates the 5 V domain for logic/peripherals with controlled distribution.</li>
+            <li>Battery telemetry uses an ADC divider ratio of 1/13 for safe measurement within converter limits.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="/assets/img/sailboat/power_stage.png" alt="Power input and regulation stage" loading="lazy" />
+          <figcaption>12 V power input protection and regulation stage.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="/assets/img/sailboat/interface_pcb.png" alt="Custom STM32 interface PCB" loading="lazy" />
+          <figcaption>Custom interface PCB integrating STM32 module and peripherals.</figcaption>
+        </figure>
+        <article>
+          <h2>Interface Board</h2>
+          <ul>
+            <li>The STM32 board is mounted as a removable module to simplify iteration and fault isolation.</li>
+            <li>Debug access, oscilloscope probing points, and flexible IO breakouts are integrated from the start.</li>
+            <li>The interface PCB enables fast hardware validation without compromising deployment architecture.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Engineering Outcomes</h2>
+          <ul>
+            <li>This project represents a complete full-stack embedded implementation combining sensing, actuation, real-time control, communication protocols, and low-level firmware architecture on a constrained STM32F103 platform.</li>
+            <li>Firmware is structured around peripheral-level control, interrupt architecture, NVIC prioritization, and deterministic execution paths.</li>
+            <li>The final result integrates clock-tree control, real-time system design discipline, and hardware–software co-design into a single deployable embedded platform.</li>
+          </ul>
+        </article>
+        <div class="project-cta">
+          <h2>Full Technical Article (PDF)</h2>
+          <p>This page is the curated narrative. The PDF contains the complete technical article, implementation details, and validation evidence.</p>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="/assets/pdf/Sailboat_Portfolio.pdf" download>Download Full Technical PDF</a>
+            <a class="btn btn-secondary" href="/assets/pdf/Sailboat_Portfolio.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+  </body>
 </html>
