@@ -54,19 +54,52 @@
     <main id="main-content" class="page-main project-page">
       <section class="section-narrow project-hero">
         <h1 class="page-title">Reverse Engineering of an MP4 Player Platform</h1>
-        <p class="project-subtitle">(SPC Internet 8488, 8 GB, 2014)</p>
-        <p class="project-meta">Jan. 2026 — Present · Personal reverse-engineering project</p>
-        <p class="project-abstract">
-          Engineering-focused reconstruction of a legacy consumer MP4 platform under limited public documentation,
-          combining physical teardown, CAD recreation, and iterative architecture validation.
-        </p>
-        <div class="project-actions">
-          <a class="btn btn-primary" href="../pdfs/MP4_Portfolio.pdf" download>Download Full PDF</a>
-          <a class="btn btn-secondary" href="./portfolio.html">Back to Portfolio</a>
+        <div class="project-hero-grid">
+          <div class="project-hero-intro">
+            <p class="project-meta">Engineering portfolio article · Hardware teardown, CAD reconstruction, and architecture validation</p>
+            <p class="project-abstract">
+              Reverse-engineering workflow focused on rebuilding a legacy MP4 platform under scarce documentation,
+              combining physical PCB analysis, custom KiCad libraries, and confidence-driven schematic reconstruction.
+            </p>
+
+            <ul class="tech-chips" aria-label="Core technologies used in the project">
+              <li>Reverse engineering</li>
+              <li>KiCad</li>
+              <li>PCB teardown</li>
+              <li>Architecture modeling</li>
+              <li>LTspice</li>
+            </ul>
+          </div>
+
+          <aside class="project-spec-card" aria-label="Project specifications">
+            <dl>
+              <div><dt>Role</dt><dd>Embedded reverse-engineering engineer</dd></div>
+              <div><dt>Scope</dt><dd>Teardown, component identification, CAD recreation, validation</dd></div>
+              <div><dt>Deliverables</dt><dd>Technical article + full PDF evidence package</dd></div>
+              <div><dt>Date</dt><dd>Jan. 2026 — Present</dd></div>
+            </dl>
+          </aside>
         </div>
       </section>
 
-      <section class="section-narrow split-section">
+      <div class="section-narrow project-layout">
+        <aside class="project-toc" aria-label="On this page">
+          <p class="project-toc-title">On this page</p>
+          <nav>
+            <ol id="project-toc-list"></ol>
+          </nav>
+        </aside>
+
+        <section class="project-jump" aria-label="Jump to section">
+          <label for="project-jump-select">Jump to section</label>
+          <select id="project-jump-select">
+            <option value="">Select a section</option>
+          </select>
+        </section>
+
+        <div class="project-content" id="project-content">
+
+      <section class="split-section">
         <article>
           <h2>Project Scope &amp; Motivation</h2>
           <ul>
@@ -81,7 +114,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/mp4/fig2-pcb-photos.png" alt="PCB photos showing routing constraints and layer assumptions" loading="lazy" />
           <figcaption>Fig. 2 — Real PCB photography indicates routing density consistent with a likely 4-layer stack.</figcaption>
@@ -96,7 +129,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Documentation Search Under Scarce-Information Constraints</h2>
           <ul>
@@ -111,7 +144,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/mp4/fig4-kicad-libs.png" alt="Custom KiCad symbols and footprints for non-standard components" loading="lazy" />
           <figcaption>Fig. 4 — Custom KiCad symbols and footprints reconstructed for undocumented components and connectors.</figcaption>
@@ -126,7 +159,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Footprint Verification &amp; Mechanical Consistency</h2>
           <ul>
@@ -141,7 +174,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/mp4/fig6-block-diagram.png" alt="Functional block diagram hypothesis for MP4 platform" loading="lazy" />
           <figcaption>Fig. 6 — Iterative functional block hypothesis with confirmed versus inferred subsystems.</figcaption>
@@ -156,7 +189,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Early Schematic Hypotheses &amp; Progressive Reconstruction</h2>
           <ul>
@@ -171,7 +204,7 @@
         </figure>
       </section>
 
-      <section class="section-narrow split-section reverse">
+      <section class="split-section reverse">
         <figure>
           <img src="../assets/img/mp4/fig8-kicad-3d.png" alt="Preliminary KiCad 3D model of reconstructed board" loading="lazy" />
           <figcaption>Fig. 8 — Early KiCad 3D CAD model used to validate placement logic and connector clearances.</figcaption>
@@ -186,7 +219,7 @@
         </article>
       </section>
 
-      <section class="section-narrow split-section">
+      <section class="split-section">
         <article>
           <h2>Current Status &amp; Next Steps</h2>
           <ul>
@@ -210,8 +243,75 @@
           </div>
         </div>
       </section>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+    <script>
+      (() => {
+        const content = document.querySelector('#project-content');
+        const tocList = document.querySelector('#project-toc-list');
+        const jumpSelect = document.querySelector('#project-jump-select');
+        if (!content || !tocList || !jumpSelect) return;
+
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent || heading.id;
+          li.appendChild(link);
+          tocList.appendChild(li);
+
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = heading.textContent || heading.id;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
+        });
+
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
+
+      })();
+    </script>
   </body>
 </html>
