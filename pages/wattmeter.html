@@ -54,21 +54,23 @@
     <main id="main-content" class="page-main project-page">
       <section class="section-narrow project-hero">
         <h1 class="page-title">Digital Wattmeter PCB Design (STM32 + KiCad)</h1>
-        <p class="project-meta">Engineering portfolio article · Schematic, PCB, fabrication, and bring-up evidence</p>
-        <p class="project-abstract">
-          End-to-end engineering of a digital wattmeter platform spanning analog front-end design, STM32 integration,
-          PCB layout and in-house fabrication. The implementation emphasizes manufacturable hardware decisions, clean
-          measurement paths, and repeatable validation from assembly through functional bring-up.
-        </p>
-
         <div class="project-hero-grid">
-          <ul class="tech-chips" aria-label="Core technologies used in the project">
-            <li>STM32</li>
-            <li>KiCad</li>
-            <li>Analog front-end</li>
-            <li>PCB milling</li>
-            <li>Validation</li>
-          </ul>
+          <div class="project-hero-intro">
+            <p class="project-meta">Engineering portfolio article · Schematic, PCB, fabrication, and bring-up evidence</p>
+            <p class="project-abstract">
+              End-to-end engineering of a digital wattmeter platform spanning analog front-end design, STM32 integration,
+              PCB layout and in-house fabrication. The implementation emphasizes manufacturable hardware decisions, clean
+              measurement paths, and repeatable validation from assembly through functional bring-up.
+            </p>
+
+            <ul class="tech-chips" aria-label="Core technologies used in the project">
+              <li>STM32</li>
+              <li>KiCad</li>
+              <li>Analog front-end</li>
+              <li>PCB milling</li>
+              <li>Validation</li>
+            </ul>
+          </div>
 
           <aside class="project-spec-card" aria-label="Project specifications">
             <dl>
@@ -335,7 +337,7 @@
         lightbox.innerHTML = `
           <div class="lightbox-backdrop" data-lightbox-close="true"></div>
           <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview dialog">
-            <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+            <button class="lightbox-close" type="button" aria-label="Close">×</button>
             <button class="lightbox-nav prev" type="button" aria-label="Show previous image">‹</button>
             <figure class="lightbox-figure">
               <img src="" alt="" />
@@ -359,7 +361,9 @@
         const clampScale = (value) => Math.max(1, Math.min(3, value));
 
         const applyScale = () => {
-          lightboxImage.style.transform = `scale(${currentScale})`;
+          lightboxImage.style.width = `${currentScale * 100}%`;
+          lightboxImage.style.maxWidth = 'none';
+          lightboxImage.style.height = 'auto';
         };
 
         const updateSlide = (index) => {
@@ -370,6 +374,11 @@
           lightboxCaption.textContent = slide.caption;
           currentScale = 1;
           applyScale();
+          const figure = lightbox.querySelector('.lightbox-figure');
+          if (figure) {
+            figure.scrollTop = 0;
+            figure.scrollLeft = 0;
+          }
         };
 
         const openLightbox = (index) => {
