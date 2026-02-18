@@ -51,7 +51,7 @@ a { color: inherit; }
 .site-title { text-decoration: none; font-size: .9rem; letter-spacing: .03em; font-weight: 500; }
 .desktop-nav { display: flex; gap: 1.1rem; }
 .desktop-nav a { text-decoration: none; position: relative; font-weight: 500; font-size: 0.96rem; opacity: 0.95; }
-.desktop-nav a.active::after, .desktop-nav a:hover::after {
+.desktop-nav a:hover::after {
   content: "";
   position: absolute;
   left: 0; bottom: -3px;

@@ -1,5 +1,3 @@
-const bodyPage = document.body.dataset.page;
-
 const GITHUB_PAGES_RESERVED_SEGMENTS = new Set(['', 'pages', 'assets', 'css', 'js', 'pdfs', 'PDFs']);
 const REPO_FALLBACK_NAME = 'web';
 
@@ -19,10 +17,6 @@ function fixGithubPagesRootPath() {
 }
 
 fixGithubPagesRootPath();
-
-document.querySelectorAll('[data-nav]').forEach((link) => {
-  if (link.dataset.nav === bodyPage) link.classList.add('active');
-});
 
 const toggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
