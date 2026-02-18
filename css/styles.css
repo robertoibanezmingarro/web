@@ -365,6 +365,8 @@ a { color: inherit; }
 .project-page--mp4 .project-toc {
   top: calc(5rem + .8rem);
   padding: .9rem .95rem;
+  max-height: calc(100vh - (5rem + .8rem) - 1rem);
+  overflow-y: auto;
 }
 
 .project-page--mp4 .project-toc ol {
