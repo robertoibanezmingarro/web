@@ -1,0 +1,113 @@
+/* =========================
+   Mobile/Tablet Cards (NO desktop changes)
+   ========================= */
+
+/* Tablet general: mejor ritmo, sin tocar desktop */
+@media (max-width: 1024px) {
+  .section-narrow { padding: 3.5rem 1.25rem; }
+  .hero-content { padding: 2rem 1.5rem 2rem clamp(6%, 7vw, 10%); }
+
+  .header-inner,
+  .project-hero-grid,
+  .project-layout,
+  .split-section {
+    min-width: 0;
+  }
+}
+
+/* Mobile/tablet: encapsular bloques lógicos en cards */
+@media (max-width: 820px) {
+  /* Title overflow safety */
+  .site-title {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 72vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Touch targets */
+  .button,
+  .btn,
+  .mobile-menu a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* PDF viewer: ancho completo y altura usable */
+  .pdf-viewer-panel {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+  .pdf-frame { height: 82vh; }
+
+  /* === Card pattern === */
+  .m-card {
+    background: rgba(0, 0, 0, 0.035);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 1.15rem;
+    margin: 1rem 0;
+  }
+
+  /* Evita que el contenido se salga y mejora composición */
+  .m-card {
+    overflow: hidden;
+  }
+
+  /* Integración de imágenes dentro de cards */
+  .m-card img,
+  .m-card picture,
+  .m-card figure {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Ritmo interno: separaciones coherentes */
+  .m-card > * + * {
+    margin-top: 0.85rem;
+  }
+
+  /* Si hay listas dentro */
+  .m-card ul,
+  .m-card ol {
+    padding-left: 1.2rem;
+  }
+}
+
+/* Mobile: densidad y respiración */
+@media (max-width: 640px) {
+  .header-inner { padding: 0.65rem 1rem; }
+  .hero { min-height: 92vh; }
+  .hero-content { padding: 1.85rem 1.1rem; }
+
+  /* En móvil, cards un poco más compactas */
+  .m-card {
+    border-radius: 14px;
+    padding: 1.0rem;
+  }
+}
+
+/* Extra safeguards for small viewports only */
+@media (max-width: 1024px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  iframe,
+  video,
+  embed,
+  object {
+    max-width: 100%;
+    height: auto;
+  }
+}
