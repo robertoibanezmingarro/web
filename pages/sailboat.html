@@ -51,7 +51,7 @@
       </div>
     </header>
 
-    <main id="main-content" class="page-main project-page">
+    <main id="main-content" class="page-main project-page project-page--sailboat">
       <section class="section-narrow project-hero">
         <h1 class="page-title">Autonomous Sailboat Control System using STM32</h1>
         <div class="project-hero-grid">
@@ -101,7 +101,7 @@
 
       <section class="split-section">
         <article>
-          <h2>System Overview &amp; Physical Platform</h2>
+          <h2 data-toc="Overview">System Overview &amp; Physical Platform</h2>
           <ul>
             <li>The mechanical platform supports full 360° yaw rotation and free roll motion under wind-induced dynamics.</li>
             <li>The embedded objective is to coordinate sail trimming, controlled rotation, and remote communication on the same constrained controller.</li>
@@ -120,7 +120,7 @@
           <figcaption>NUCLEO F103-RB board supporting the STM32F103 microcontroller.</figcaption>
         </figure>
         <article>
-          <h2>Microcontroller Platform – STM32F103</h2>
+          <h2 data-toc="STM32 Platform">Microcontroller Platform – STM32F103</h2>
           <ul>
             <li>The STM32F103 was selected intentionally over higher-end F4/H7 devices to enforce disciplined real-time design on limited resources.</li>
             <li>Cortex-M3 core features, NVIC control, PWM-capable timers, and SPI/I2C/USART peripherals cover all mission requirements.</li>
@@ -131,7 +131,7 @@
 
       <section class="split-section">
         <article>
-          <h2>Global Embedded Architecture</h2>
+          <h2 data-toc="Architecture">Global Embedded Architecture</h2>
           <ul>
             <li>The system architecture integrates incremental encoder, IMU, RTC, XBee, servo actuation, motor driver, and ADC battery monitoring.</li>
             <li>Each subsystem is mapped to dedicated peripherals and interrupt paths to avoid contention and non-deterministic scheduling.</li>
@@ -150,7 +150,7 @@
           <figcaption>Wind vane and incremental encoder measurement chain.</figcaption>
         </figure>
         <article>
-          <h2>Wind Angle Measurement (Incremental Encoder)</h2>
+          <h2 data-toc="Wind Angle (Encoder)">Wind Angle Measurement (Incremental Encoder)</h2>
           <ul>
             <li>Quadrature decoding uses A/B channels plus index pulse for robust angular reference management.</li>
             <li>With 360 periods and 4× decoding, the implementation improves effective resolution while preserving direction information.</li>
@@ -161,7 +161,7 @@
 
       <section class="split-section">
         <article>
-          <h2>Roll Measurement – IMU</h2>
+          <h2 data-toc="Roll IMU">Roll Measurement – IMU</h2>
           <ul>
             <li>The platform compares LSM9DS1 over I2C versus ADXL345 over SPI for roll-angle estimation trade-offs.</li>
             <li>Both sensor drivers were written from scratch, including multi-byte read flows and explicit bus-state handling.</li>
@@ -180,7 +180,7 @@
           <figcaption>Standard RC servo control signal (20 ms period).</figcaption>
         </figure>
         <article>
-          <h2>Sail Trim Control – PWM Servo</h2>
+          <h2 data-toc="Sail Trim PWM">Sail Trim Control – PWM Servo</h2>
           <ul>
             <li>Sail control is generated with a 20 ms period and pulse width modulation between 1 ms and 2 ms.</li>
             <li>TIM PWM configuration is performed at register level to guarantee repeatable update timing.</li>
@@ -191,7 +191,7 @@
 
       <section class="split-section">
         <article>
-          <h2>Yaw Rotation – Motor Driver</h2>
+          <h2 data-toc="Yaw Motor">Yaw Rotation – Motor Driver</h2>
           <ul>
             <li>Yaw actuation combines direction control with PWM switching above 20 kHz to reduce audible noise.</li>
             <li>The dedicated driver board separates power and control stages for cleaner switching behavior.</li>
@@ -210,7 +210,7 @@
           <figcaption>Digi XBee 2.4 GHz RF module used as wireless communication interface.</figcaption>
         </figure>
         <article>
-          <h2>Wireless Communication – XBee</h2>
+          <h2 data-toc="XBee Comms">Wireless Communication – XBee</h2>
           <ul>
             <li>Communication is implemented on UART full duplex with a 100 ms command cycle.</li>
             <li>Reception uses interrupt-driven framing to reduce polling overhead and latency jitter.</li>
@@ -221,7 +221,7 @@
 
       <section class="split-section">
         <article>
-          <h2>Power Architecture</h2>
+          <h2 data-toc="Power">Power Architecture</h2>
           <ul>
             <li>The electrical chain starts from a 12 V input with dedicated protection stage.</li>
             <li>Regulation generates the 5 V domain for logic/peripherals with controlled distribution.</li>
@@ -240,7 +240,7 @@
           <figcaption>Custom interface PCB integrating STM32 module and peripherals.</figcaption>
         </figure>
         <article>
-          <h2>Interface Board</h2>
+          <h2 data-toc="Interface PCB">Interface Board</h2>
           <ul>
             <li>The STM32 board is mounted as a removable module to simplify iteration and fault isolation.</li>
             <li>Debug access, oscilloscope probing points, and flexible IO breakouts are integrated from the start.</li>
@@ -251,7 +251,7 @@
 
       <section class="split-section">
         <article>
-          <h2>Engineering Outcomes</h2>
+          <h2 data-toc="Outcomes">Engineering Outcomes</h2>
           <ul>
             <li>This project represents a complete full-stack embedded implementation combining sensing, actuation, real-time control, communication protocols, and low-level firmware architecture on a constrained STM32F103 platform.</li>
             <li>Firmware is structured around peripheral-level control, interrupt architecture, NVIC prioritization, and deterministic execution paths.</li>
@@ -259,7 +259,7 @@
           </ul>
         </article>
         <div class="project-cta">
-          <h2>Full Technical Article (PDF)</h2>
+          <h2 data-toc="PDF">Full Technical Article (PDF)</h2>
           <p>This page is the curated narrative. The PDF contains the complete technical article, implementation details, and validation evidence.</p>
           <div class="project-actions">
             <a class="btn btn-primary" href="../assets/pdf/Sailboat_Portfolio.pdf" download>Download Full Technical PDF</a>
@@ -290,16 +290,18 @@
           const id = count ? `${base}-${count + 1}` : base;
           heading.id = heading.id || id;
 
+          const tocLabel = heading.dataset.toc || heading.textContent || heading.id;
+
           const li = document.createElement('li');
           const link = document.createElement('a');
           link.href = `#${heading.id}`;
-          link.textContent = heading.textContent || heading.id;
+          link.textContent = tocLabel;
           li.appendChild(link);
           tocList.appendChild(li);
 
           const option = document.createElement('option');
           option.value = heading.id;
-          option.textContent = heading.textContent || heading.id;
+          option.textContent = tocLabel;
           jumpSelect.appendChild(option);
 
           return { heading, link };

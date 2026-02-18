@@ -377,6 +377,33 @@ a { color: inherit; }
   line-height: 1.32;
 }
 
+
+.project-page--sailboat .project-layout {
+  grid-template-columns: minmax(0, 245px) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.project-page--sailboat .project-toc {
+  padding: .85rem .9rem;
+}
+
+.project-page--sailboat .project-toc-title {
+  margin-bottom: .55rem;
+  font-size: .82rem;
+}
+
+.project-page--sailboat .project-toc ol {
+  padding-left: 1rem;
+  gap: .2rem;
+}
+
+.project-page--sailboat .project-toc a {
+  display: block;
+  font-size: .93rem;
+  line-height: 1.2;
+  padding: .08rem .18rem;
+}
+
 .project-actions {
   margin-top: .4rem;
   display: flex;
