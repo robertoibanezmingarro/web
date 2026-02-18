@@ -69,12 +69,14 @@
 
       <section class="intro-text section-narrow">
         <p>
-          I build embedded systems with a strong balance of hardware understanding and software rigor,
-          keeping design decisions measurable, testable, and maintainable.
+          I design and implement embedded systems with architectural intent — integrating hardware,
+          firmware, and digital logic into coherent, measurable platforms.
         </p>
         <p>
-          This portfolio collects full project documentation exactly as produced, so architecture,
-          calculations, diagrams, and validation results remain intact.
+          This portfolio presents complete project documentation as produced during development:
+          system architecture, PCB design decisions, timing analysis, simulations, validation
+          measurements, and experimental results. Nothing is reduced to summaries; engineering
+          reasoning remains explicit.
         </p>
       </section>
 
@@ -83,23 +85,23 @@
           <img src="assets/img/resume-thumb.jpg" alt="Technical profile preview" />
         </figure>
         <article>
-          <h2>An Engineer on a Mission.</h2>
+          <h2>Full-Stack Embedded Systems Engineer</h2>
           <p>
-            I build embedded systems across the entire hardware stack — designing the PCB, defining
-            the architecture, implementing low-level firmware, and developing digital logic on FPGA.
+            I operate across the full hardware stack — from KiCad-based PCB design and power domain
+            structuring to register-level firmware on STM32 and ESP32 platforms, and structured VHDL
+            development for FPGA-based systems.
           </p>
           <p>
-            My approach integrates electrical design, microcontroller-level control, and RTL-based
-            hardware description into a unified system architecture. Power domains, signal integrity,
-            interrupt latency, bus structures, and digital timing are treated as design variables —
-            not afterthoughts.
+            Electrical constraints, signal integrity, interrupt latency, clock domains, and digital
+            timing are treated as primary design variables. Architectural decisions are validated
+            through instrumentation, simulation (MATLAB / Python), and controlled measurement workflows.
           </p>
           <p>
-            The result is deterministic, resource-efficient, and experimentally validated hardware
-            platforms.
+            The result is deterministic, resource-efficient, and experimentally verified embedded
+            systems.
           </p>
           <p>
-            This portfolio reflects full-system engineering, not modular assembly.
+            Engineered as unified architectures, not assembled subsystems.
           </p>
         </article>
       </section>
@@ -122,6 +124,199 @@
             <h3>DIGITAL WATTMETER PCB DESIGN (STM32 + KICAD)</h3>
             <p>Board-level metering, embedded acquisition, and instrumentation-grade layout.</p>
           </a>
+        </div>
+      </section>
+
+      <section class="background projects section-narrow" aria-labelledby="background-title">
+        <header class="section-header">
+          <h2 id="background-title">ENGINEERING TRACK</h2>
+          <p class="section-lede">
+            A short, evidence-driven snapshot of my academic path and the constraints that shaped how I work.
+          </p>
+        </header>
+
+        <div class="timeline">
+          <!-- Row 1 -->
+          <div class="split-row">
+            <figure class="split-media">
+              <img
+                src="assets/img/insa-campus.jpg"
+                alt="INSA Toulouse campus"
+                loading="lazy"
+              />
+              <figcaption class="caption">GEI – INSA Toulouse (France) × ESTCE – Universitat Jaume I (Spain)</figcaption>
+            </figure>
+
+            <article class="split-copy">
+              <h3>Double degree: UJI × INSA Toulouse</h3>
+              <p>
+                I’m pursuing a double degree between Universitat Jaume I (Spain) and INSA Toulouse (France),
+                specialised in Embedded Systems. My work spans hardware design, low-level firmware, and RTL logic,
+                with engineering-grade documentation as a core deliverable.
+              </p>
+
+              <ul class="facts">
+                <li><strong>Path:</strong> Industrial Technologies Engineering (UJI) + Electronics & Automation Engineering (INSA)</li>
+                <li><strong>Focus:</strong> Embedded architectures, deterministic firmware, verification-driven design</li>
+                <li><strong>Deliverables:</strong> Architecture, diagrams, validation results, and full project traceability</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Row 2 (reversed) -->
+          <div class="split-row reverse">
+            <figure class="split-media">
+              <img
+                src="assets/img/fle-summer-school.jpg"
+                alt="FLE Summer School"
+                loading="lazy"
+              />
+              <figcaption class="caption">FLE Summer School — French immersion</figcaption>
+            </figure>
+
+            <article class="split-copy">
+              <h3>Adaptation under constraints</h3>
+              <p>
+                Moving to France to study engineering without knowing the language forced fast adaptation:
+                new academic system, new culture, and a heavy technical workload. I treated it like an engineering problem:
+                break down, iterate, measure progress, and execute consistently.
+              </p>
+
+              <ul class="facts">
+                <li><strong>Constraint:</strong> technical courses in a new language</li>
+                <li><strong>Method:</strong> structured learning loops + repeatable study systems</li>
+                <li><strong>Outcome:</strong> maintained performance while building a strong project portfolio</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="split-row">
+            <figure class="split-media">
+              <img
+                src="assets/img/embedded-lab.jpg"
+                alt="Embedded systems laboratory work"
+                loading="lazy"
+              />
+              <figcaption class="caption">Embedded systems laboratory work — hardware validation & instrumentation</figcaption>
+            </figure>
+
+            <article class="split-copy">
+              <h3>Performance & signal</h3>
+              <p>
+                I’m part of an academic excellence track (ARA). Beyond grades, my main “signal” is execution:
+                I ship complete, documented systems — not just partial demos — and keep the engineering reasoning explicit.
+              </p>
+
+              <div class="mini-cards">
+                <div class="mini-card">
+                  <div class="mini-title">What I optimize</div>
+                  <p>Determinism, traceability, validation, and clean architecture boundaries.</p>
+                </div>
+                <div class="mini-card">
+                  <div class="mini-title">What you’ll see</div>
+                  <p>Full project documentation: decisions, diagrams, calculations, tests, and results.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="background projects section-narrow" aria-labelledby="toolchain-title">
+        <header class="section-header">
+          <h2 id="toolchain-title">TECHNICAL ENVIRONMENT &amp; TOOLCHAIN</h2>
+        </header>
+
+        <div class="timeline">
+          <div class="split-row">
+            <figure class="split-media">
+              <img
+                src="assets/img/ecad-toolchain.jpg"
+                alt="Electronic design and simulation environment"
+                loading="lazy"
+              />
+            </figure>
+
+            <article class="split-copy">
+              <h3>Electronic Design &amp; Simulation</h3>
+              <p>
+                I use schematic capture and simulation tools as engineering decision environments —
+                not drawing utilities. Circuit topology, filtering strategies, reference schemes, and
+                signal behavior are validated before layout execution.
+              </p>
+              <ul class="facts">
+                <li><strong>Tools integrated into workflow:</strong> KiCad • LTSpice • Proteus</li>
+                <li><strong>Expansion:</strong> Currently expanding into Altium Designer</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="split-row reverse">
+            <figure class="split-media">
+              <img
+                src="assets/img/embedded-platforms.jpg"
+                alt="Embedded platforms and firmware execution"
+                loading="lazy"
+              />
+            </figure>
+
+            <article class="split-copy">
+              <h3>Embedded Platforms &amp; Firmware Execution</h3>
+              <p>
+                Firmware is developed with architectural intent. Peripheral configuration at register
+                level, interrupt-driven execution, deterministic timing behavior, and resource-bound
+                optimization define my implementation approach.
+              </p>
+              <ul class="facts">
+                <li><strong>Platforms:</strong> STM32 • ESP32 • Bare-metal C development</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="split-row">
+            <figure class="split-media">
+              <img
+                src="assets/img/modeling-simulation.jpg"
+                alt="Engineering computation and modeling workflows"
+                loading="lazy"
+              />
+            </figure>
+
+            <article class="split-copy">
+              <h3>Engineering Computation &amp; Modeling</h3>
+              <p>
+                Numerical modeling and simulation are used to validate system hypotheses before
+                hardware deployment. Control systems, filtering behavior, and signal processing
+                workflows are analyzed and verified using computational tools.
+              </p>
+              <ul class="facts">
+                <li><strong>Tools:</strong> MATLAB • Python</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="split-row reverse">
+            <figure class="split-media">
+              <img
+                src="assets/img/mechanical-integration.jpg"
+                alt="Mechanical and system integration"
+                loading="lazy"
+              />
+            </figure>
+
+            <article class="split-copy">
+              <h3>Mechanical &amp; System Integration</h3>
+              <p>
+                Mechanical design is treated as part of system architecture. Enclosure constraints,
+                structural considerations, and electro-mechanical compatibility are integrated early
+                in the development cycle.
+              </p>
+              <ul class="facts">
+                <li><strong>Tool:</strong> SolidWorks</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
     </main>
