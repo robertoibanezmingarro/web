@@ -9,6 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script defer src="../js/main.js"></script>
+    <style>
+      .contact-main {
+        display: grid;
+        gap: 1.5rem;
+        justify-items: center;
+      }
+
+      .contact-card {
+        width: min(100%, 680px);
+        border: 1px solid var(--line);
+        padding: clamp(1.4rem, 4vw, 2.3rem);
+        display: grid;
+        gap: 1.2rem;
+        text-align: center;
+      }
+
+      .contact-card h2,
+      .contact-card p {
+        margin: 0;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .contact-copy-button {
+        font: inherit;
+        color: inherit;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .contact-preferred,
+      .contact-meta {
+        margin: 0;
+      }
+
+      .contact-meta {
+        max-width: 60ch;
+      }
+
+      .contact-phone {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 640px) {
+        .contact-actions {
+          width: 100%;
+          display: grid;
+        }
+
+        .contact-actions .button {
+          text-align: center;
+        }
+      }
+    </style>
   </head>
   <body data-page="contact">
     <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -28,10 +87,10 @@
         </nav>
 
         <div class="social-links" aria-label="Enlaces sociales">
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.1c.53-1 1.83-2.2 3.77-2.2C19.2 8 21 10.1 21 14.1V24h-4v-8.6c0-2.05-.04-4.7-2.87-4.7-2.87 0-3.31 2.24-3.31 4.55V24h-4V8Z"/></svg>
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.74.5 12.21c0 5.18 3.3 9.57 7.88 11.12.58.11.8-.26.8-.58 0-.29-.01-1.06-.02-2.08-3.2.71-3.88-1.58-3.88-1.58-.52-1.36-1.28-1.72-1.28-1.72-1.05-.73.08-.72.08-.72 1.16.08 1.76 1.22 1.76 1.22 1.03 1.81 2.7 1.29 3.36.99.1-.76.4-1.29.72-1.59-2.56-.3-5.26-1.32-5.26-5.86 0-1.3.45-2.36 1.2-3.19-.12-.3-.52-1.51.12-3.15 0 0 .98-.32 3.2 1.22a10.73 10.73 0 0 1 5.82 0c2.22-1.54 3.2-1.22 3.2-1.22.64 1.64.24 2.85.12 3.15.74.83 1.2 1.89 1.2 3.2 0 4.55-2.7 5.56-5.28 5.86.41.36.78 1.08.78 2.19 0 1.58-.02 2.86-.02 3.25 0 .32.21.7.8.58A11.74 11.74 0 0 0 23.5 12.2C23.5 5.75 18.35.5 12 .5Z"/></svg>
           </a>
         </div>
@@ -45,20 +104,61 @@
           <a href="./contact.html" data-nav="contact">Contact</a>
         </nav>
         <div class="social-links">
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
         </div>
       </div>
     </header>
-    <main id="main-content" class="page-main section-narrow">
+
+    <main id="main-content" class="page-main section-narrow contact-main">
       <h1 class="page-title">Contact</h1>
-      <p class="lead">Open to internships, embedded development collaboration, and engineering discussions.</p>
-      <div class="contact-list">
-        <p><strong>Email:</strong> <a href="mailto:roberto@example.com">roberto@example.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com" target="_blank" rel="noopener">linkedin.com/in/roberto</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank" rel="noopener">github.com/roberto</a></p>
-      </div>
+
+      <section class="contact-card" aria-label="Contact card">
+        <h2>Let’s connect</h2>
+        <p class="lead">Available for engineering collaboration and technical discussions.</p>
+
+        <div class="contact-actions" aria-label="Contact actions">
+          <a class="button" href="mailto:robertoibanezmingarro@gmail.com">Email me</a>
+          <a class="button" href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button" href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener">GitHub</a>
+          <button class="button contact-copy-button" id="copy-email" type="button" aria-live="polite" data-email="robertoibanezmingarro@gmail.com">Copy email</button>
+        </div>
+
+        <p class="small contact-preferred">Prefer email for formal inquiries. LinkedIn for quick introductions.</p>
+        <p class="small contact-meta">Based in Toulouse, France · Relocating soon to Spain · English · French · Spanish · Valencian · Typical response time: 24–48h</p>
+        <p class="small"><a class="contact-phone" href="tel:+34681631715">+34 681631715</a></p>
+      </section>
     </main>
-    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p><div class="social-links"><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com" target="_blank" rel="noopener">GitHub</a><a href="mailto:roberto@example.com">Email</a></div></footer>
+
+    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p><div class="social-links"><a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener">GitHub</a><a href="mailto:robertoibanezmingarro@gmail.com">Email</a></div></footer>
+
+    <script>
+      const copyEmailButton = document.getElementById('copy-email');
+
+      if (copyEmailButton) {
+        const originalLabel = copyEmailButton.textContent;
+
+        copyEmailButton.addEventListener('click', async () => {
+          const email = copyEmailButton.dataset.email;
+
+          if (!email) {
+            return;
+          }
+
+          try {
+            await navigator.clipboard.writeText(email);
+            copyEmailButton.textContent = 'Copied';
+            setTimeout(() => {
+              copyEmailButton.textContent = originalLabel;
+            }, 1800);
+          } catch {
+            copyEmailButton.textContent = 'Copy failed';
+            setTimeout(() => {
+              copyEmailButton.textContent = originalLabel;
+            }, 1800);
+          }
+        });
+      }
+    </script>
   </body>
 </html>
