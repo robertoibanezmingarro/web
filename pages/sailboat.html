@@ -6,7 +6,7 @@
     <title>Autonomous Sailboat Control System using STM32 | Roberto Ibáñez Mingarro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css" />
     <script defer src="../js/main.js"></script>
   </head>
@@ -51,7 +51,7 @@
       </div>
     </header>
 
-    <main id="main-content" class="page-main project-page sailboat-page">
+    <main id="main-content" class="page-main project-page">
       <section class="section-narrow project-hero">
         <h1 class="page-title">Autonomous Sailboat Control System using STM32</h1>
         <p class="project-meta">Embedded systems portfolio article · deterministic control, sensing, communication, and actuation</p>
@@ -207,18 +207,23 @@
         </article>
       </section>
 
-      <section class="section-narrow sailboat-outcomes">
-        <h2>Engineering Outcomes</h2>
-        <p>
-          This project represents a complete full-stack embedded implementation combining sensing, actuation,
-          real-time control, communication protocols, and low-level firmware architecture on a constrained STM32F103 platform.
-          It consolidates peripheral-level firmware design, interrupt architecture with NVIC prioritization,
-          deterministic timing behavior, explicit clock-tree control, and hardware–software co-design in a single coherent system.
-        </p>
-      </section>
-
-      <section class="sailboat-final-cta">
-        <a class="sailboat-download-btn" href="/assets/pdf/Sailboat_Portfolio.pdf" download>Download Full Technical PDF</a>
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Engineering Outcomes</h2>
+          <ul>
+            <li>This project represents a complete full-stack embedded implementation combining sensing, actuation, real-time control, communication protocols, and low-level firmware architecture on a constrained STM32F103 platform.</li>
+            <li>Firmware is structured around peripheral-level control, interrupt architecture, NVIC prioritization, and deterministic execution paths.</li>
+            <li>The final result integrates clock-tree control, real-time system design discipline, and hardware–software co-design into a single deployable embedded platform.</li>
+          </ul>
+        </article>
+        <div class="project-cta">
+          <h2>Full Technical Article (PDF)</h2>
+          <p>This page is the curated narrative. The PDF contains the complete technical article, implementation details, and validation evidence.</p>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="/assets/pdf/Sailboat_Portfolio.pdf" download>Download Full Technical PDF</a>
+            <a class="btn btn-secondary" href="/assets/pdf/Sailboat_Portfolio.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+          </div>
+        </div>
       </section>
     </main>
 
