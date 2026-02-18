@@ -347,13 +347,7 @@ a { color: inherit; }
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   max-width: min(100%, 720px);
-  cursor: zoom-in;
   transition: box-shadow .2s ease;
-}
-
-.project-page .split-section img:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
 }
 
 .project-page .split-section figcaption {
@@ -410,102 +404,6 @@ a { color: inherit; }
   margin-top: 1.5rem;
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 2200;
-}
-
-.lightbox.is-open {
-  display: grid;
-  place-items: center;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 10, 10, .78);
-}
-
-.lightbox-dialog {
-  position: relative;
-  width: min(94vw, 1100px);
-  max-height: 92vh;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: .6rem;
-  align-items: center;
-  z-index: 1;
-}
-
-.lightbox-figure {
-  margin: 0;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.1rem;
-  overflow: auto;
-}
-
-.lightbox-figure img {
-  width: 100%;
-  max-height: none;
-  object-fit: contain;
-  display: block;
-}
-
-.lightbox-figure figcaption {
-  margin-top: .7rem;
-  color: #4f4f4f;
-  font-size: .9rem;
-}
-
-.lightbox-close,
-.lightbox-nav,
-.lightbox-zoom-controls button {
-  border: 1px solid #fff;
-  background: rgba(24, 24, 24, .75);
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.lightbox-close {
-  position: fixed;
-  top: max(16px, env(safe-area-inset-top, 0px) + 8px);
-  right: max(16px, env(safe-area-inset-right, 0px) + 8px);
-  width: 44px;
-  height: 44px;
-  font-size: 1.6rem;
-  line-height: 1;
-  z-index: 1300;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-nav {
-  width: 2.5rem;
-  height: 3.5rem;
-  font-size: 2rem;
-}
-
-.lightbox-zoom-controls {
-  position: absolute;
-  right: .85rem;
-  bottom: 1.8rem;
-  display: flex;
-  gap: .4rem;
-}
-
-.lightbox-zoom-controls button {
-  min-width: 2.2rem;
-  padding: .45rem .55rem;
-}
-
-body.lightbox-open {
-  overflow: hidden;
-}
 
 .projects h2, .page-title {
   font-family: inherit;
@@ -614,20 +512,6 @@ body.lightbox-open {
   .project-hero-grid { grid-template-columns: 1fr; }
   .project-spec-card { margin-top: .1rem; }
   .project-actions { flex-direction: column; align-items: flex-start; }
-  .lightbox-dialog {
-    width: min(96vw, 1100px);
-    grid-template-columns: 1fr;
-  }
-  .lightbox-nav {
-    width: 2.25rem;
-    height: 2.25rem;
-    font-size: 1.35rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .lightbox-nav.prev { left: .5rem; }
-  .lightbox-nav.next { right: .5rem; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero { animation: heroPan 16s ease-in-out infinite alternate; }
