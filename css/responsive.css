@@ -17,7 +17,31 @@
   }
 
   .project-jump {
-    display: block;
+    display: none !important;
+  }
+
+  .project-page .project-hero,
+  .project-page .project-hero-intro,
+  .project-page .project-spec-card,
+  .project-page .project-content,
+  .project-page .project-content .split-section,
+  .project-page .project-content .split-section article,
+  .project-page .project-content .split-section figcaption {
+    text-align: center;
+  }
+
+  .project-page .project-hero-grid,
+  .project-page .project-content .split-section {
+    justify-items: center;
+  }
+
+  .project-page .tech-chips {
+    justify-content: center;
+  }
+
+  .project-page .project-content ul {
+    list-style-position: inside;
+    padding-left: 0;
   }
 
   .header-inner,
