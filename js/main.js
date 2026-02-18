@@ -132,7 +132,7 @@ async function initPdfEmbed() {
   if (resolvedPdf) {
     const iframe = document.createElement('iframe');
     iframe.className = 'pdf-frame';
-    iframe.src = `${resolvedPdf}#view=Fit`;
+    iframe.src = `${resolvedPdf}#view=FitH`;
     iframe.title = `${title} viewer`;
     viewer.appendChild(iframe);
     return;
