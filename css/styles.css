@@ -472,8 +472,8 @@ a { color: inherit; }
 
 .lightbox-close {
   position: fixed;
-  top: max(76px, env(safe-area-inset-top, 0px) + 16px);
-  right: max(16px, env(safe-area-inset-right, 0px) + 16px);
+  top: max(16px, env(safe-area-inset-top, 0px) + 8px);
+  right: max(16px, env(safe-area-inset-right, 0px) + 8px);
   width: 44px;
   height: 44px;
   font-size: 1.6rem;
