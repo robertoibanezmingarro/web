@@ -91,19 +91,25 @@ a { color: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.55) 35%,
-    rgba(0, 0, 0, 0.25) 60%,
-    rgba(0, 0, 0, 0) 85%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 20, 24, 0.16) 0%,
+      rgba(18, 20, 24, 0.16) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.65) 35%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0) 85%
+    );
   pointer-events: none;
 }
 .hero-content {
   position: relative;
   max-width: 900px;
-  padding: 2rem 2.25rem 2rem clamp(8%, 10vw, 12%);
+  padding: 2rem 2.25rem 2rem clamp(10%, 12vw, 15%);
 }
 .hero h1 { font-size: clamp(1.75rem, 5vw, 3.1rem); margin: 0 0 1rem; font-weight: 600; }
 .hero p { margin: 0; font-size: clamp(0.95rem, 1.7vw, 1.1rem); }
@@ -197,20 +203,26 @@ a { color: inherit; }
   .pdf-layout { grid-template-columns: 1fr; }
   .pdf-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
   .hero {
-    justify-items: center;
-    text-align: center;
+    justify-items: start;
+    text-align: left;
   }
   .hero::before {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.62) 0%,
-      rgba(0, 0, 0, 0.45) 38%,
-      rgba(0, 0, 0, 0.18) 65%,
-      rgba(0, 0, 0, 0) 90%
-    );
+    background:
+      linear-gradient(
+        180deg,
+        rgba(18, 20, 24, 0.14) 0%,
+        rgba(18, 20, 24, 0.14) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.74) 0%,
+        rgba(0, 0, 0, 0.56) 35%,
+        rgba(0, 0, 0, 0.28) 60%,
+        rgba(0, 0, 0, 0) 88%
+      );
   }
   .hero-content {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 2rem clamp(7%, 9vw, 10%);
   }
 }
 @media (max-width: 640px) {
