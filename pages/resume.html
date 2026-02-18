@@ -1,7 +1,153 @@
 <!doctype html>
 <html lang="es">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Resume PDF | Roberto Ibáñez Mingarro</title><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../css/styles.css" /><script defer src="../js/main.js"></script></head>
-  <body data-page="resume"><a class="skip-link" href="#main-content">Saltar al contenido principal</a><header class="site-header" id="site-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume | Roberto Ibáñez Mingarro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../js/main.js"></script>
+    <style>
+      .resume-shell {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .resume-header {
+        border: 1px solid var(--line);
+        padding: 1.25rem;
+      }
+
+      .resume-header h2 {
+        margin: 0;
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
+      }
+
+      .resume-role {
+        margin: 0.35rem 0 0.8rem;
+        color: var(--muted);
+      }
+
+      .resume-contact {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        color: var(--muted);
+      }
+
+      .resume-contact a {
+        color: inherit;
+      }
+
+      .resume-section h2 {
+        margin: 0 0 0.9rem;
+        font-size: 1.2rem;
+      }
+
+      .resume-list,
+      .resume-skills,
+      .resume-languages {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .resume-item {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 0.9rem;
+      }
+
+      .resume-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .resume-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+
+      .resume-meta h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .resume-dates {
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .resume-item p {
+        margin: 0.45rem 0 0;
+      }
+
+      .resume-item ul {
+        margin: 0.55rem 0 0;
+        padding-left: 1.1rem;
+        display: grid;
+        gap: 0.3rem;
+      }
+
+      .resume-skill-grid {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .resume-skills li strong,
+      .resume-languages strong {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .resume-pdf-card {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .resume-pdf-card h2,
+      .resume-pdf-card p {
+        margin: 0;
+      }
+
+      .resume-pdf-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .button-light {
+        background: transparent;
+      }
+
+      @media (min-width: 900px) {
+        .resume-skill-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .resume-contact {
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+
+        .resume-dates {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="resume">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header" id="site-header">
       <div class="header-inner">
         <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
 
@@ -38,5 +184,177 @@
           <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
         </div>
       </div>
-    </header><main id="main-content" class="page-main"><section class="pdf-layout" data-pdf-page data-pdf-src="../pdfs/Roberto_Ibanez_Mingarro_MSc.pdf" data-pdf-title="Resume"><aside class="pdf-sidebar"><h2>Pages</h2><p class="small">Use your browser's native PDF page controls.</p></aside><div class="pdf-viewer-panel"><div class="pdf-toolbar"><a class="button" href="../pdfs/Roberto_Ibanez_Mingarro_MSc.pdf" download>Download PDF</a><a class="button" href="./portfolio.html">Back to portfolio</a></div><div class="pdf-viewer"></div><p class="pdf-missing" hidden>No se encontró el PDF en <code>../pdfs/Roberto_Ibanez_Mingarro_MSc.pdf</code>. Añádelo para mostrar el documento completo.</p></div></section></main><footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer></body>
+    </header>
+
+    <main id="main-content" class="page-main section-narrow">
+      <h1 class="page-title">Resume</h1>
+      <p class="lead">Electronics and embedded systems profile focused on robust design, control, and validation workflows.</p>
+
+      <div class="resume-shell" aria-label="Curriculum vitae">
+        <section class="resume-header" aria-labelledby="resume-name">
+          <h2 id="resume-name">Roberto Ibáñez Mingarro (21 y.o.)</h2>
+          <p class="resume-role">Electronics &amp; Embedded Systems Engineering Student</p>
+          <p class="resume-contact">
+            <a href="https://linkedin.com/in/robertoibanezmingarro" target="_blank" rel="noopener">linkedin.com/in/robertoibanezmingarro</a>
+            <span aria-hidden="true">|</span>
+            <a href="mailto:robertoibanezmingarro@gmail.com">robertoibanezmingarro@gmail.com</a>
+            <span aria-hidden="true">|</span>
+            <a href="tel:+34681631715">+34 681 631 715</a>
+          </p>
+        </section>
+
+        <section class="resume-section" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <ul class="resume-list">
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>MSc in Electronics and Automation Engineering — INSA Toulouse (France)</h3>
+                <span class="resume-dates">Sept. 2024 – Present</span>
+              </div>
+              <p>Expected graduation: September 2026.</p>
+              <p>Specialization in Embedded Systems.</p>
+              <p>Focus on advanced circuit design and control systems.</p>
+              <p>Strong adaptability to complex engineering environments.</p>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>BSc in Industrial Technologies Engineering — Universitat Jaume I (Spain)</h3>
+                <span class="resume-dates">Sept. 2022 – Present</span>
+              </div>
+              <p>Expected graduation: September 2026.</p>
+              <p>ARA Program Member: High Academic Performance program with limited enrollment, small cohorts, and strong emphasis on research and instruction in English.</p>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>MSc in Industrial Engineering — Universitat Jaume I (Spain)</h3>
+                <span class="resume-dates">Sept. 2026 – Planned</span>
+              </div>
+              <p>Expected start: September 2026; admission confirmed through the INSA Toulouse–UJI double-degree pathway.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="resume-section" aria-labelledby="projects-title">
+          <h2 id="projects-title">Experience &amp; Projects</h2>
+          <ul class="resume-list">
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>Reverse engineering of MP4 player (SPC Int. 8488, from 2014) — Personal project</h3>
+                <span class="resume-dates">Jan. 2026 – Present</span>
+              </div>
+              <ul>
+                <li>Reconstructed system architecture through physical teardown, PCB inspection, package identification, and datasheet triangulation under scarce documentation constraints.</li>
+                <li>Developed iterative schematic hypotheses, custom KiCad symbols/footprints, and overlay-based mechanical validation to progressively converge toward a simulation-ready model.</li>
+              </ul>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>Design &amp; fabrication of a digital wattmeter with PCB (KiCad) — INSA Toulouse</h3>
+                <span class="resume-dates">Sept. 2025 – Nov. 2025</span>
+              </div>
+              <ul>
+                <li>Designed and fabricated a mixed-signal measurement platform integrating analog front-end conditioning, STM32-based acquisition, and custom PCB layout.</li>
+                <li>Performed validation from power integrity and filtering analysis to firmware bring-up, ensuring repeatable measurement behavior and manufacturability constraints.</li>
+              </ul>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>Autonomous sailboat control system using STM32 (embedded) — INSA Toulouse</h3>
+                <span class="resume-dates">Sept. 2025 – Nov. 2025</span>
+              </div>
+              <ul>
+                <li>Implemented embedded control logic on STM32 for autonomous navigation, integrating sensor acquisition, actuator control, and real-time system coordination.</li>
+                <li>Structured firmware at register-level granularity, ensuring deterministic behavior and robust control-loop execution under constrained hardware conditions.</li>
+              </ul>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>Design &amp; control of an autonomous car for NXP Cup (embedded) — INSA Toulouse</h3>
+                <span class="resume-dates">Sept. 2025 – Present</span>
+              </div>
+              <ul>
+                <li>Contributed to embedded system integration for autonomous vehicle platform, combining perception input, control algorithms, and real-time actuation.</li>
+                <li>Worked on system-level validation and tuning to ensure stable closed-loop performance under dynamic track conditions.</li>
+              </ul>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>Design and simulation of an 8-bit CPU in VHDL (RTL architecture) — INSA Toulouse</h3>
+                <span class="resume-dates">Sept. 2025 – Nov. 2025</span>
+              </div>
+              <ul>
+                <li>Designed and simulated a complete 8-bit processor at RTL level, including datapath, control unit, and instruction decoding architecture.</li>
+                <li>Developed structured testbenches to validate functional correctness and timing behavior across multiple architectural iterations.</li>
+              </ul>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>Independent development of an IDE using Python &amp; PySide6 — Personal project</h3>
+                <span class="resume-dates">Jun. 2025 – Present</span>
+              </div>
+              <ul>
+                <li>Architected a desktop application enabling engineering-focused animated content generation, integrating LaTeX rendering and structured animation pipelines.</li>
+                <li>Designed modular software structure using object-oriented principles to support extensibility and maintainability.</li>
+              </ul>
+            </li>
+            <li class="resume-item">
+              <div class="resume-meta">
+                <h3>STEM Tutor (Mathematics &amp; Physics for High School) — Academia Romar (Burriana)</h3>
+                <span class="resume-dates">Oct. 2022 – Jun. 2024</span>
+              </div>
+              <ul>
+                <li>Delivered structured one-on-one instruction in mathematics and physics, adapting explanations to student-specific conceptual gaps.</li>
+                <li>Reinforced analytical reasoning and problem-solving methodologies through progressive exercise-based learning.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section class="resume-section" aria-labelledby="skills-title">
+          <h2 id="skills-title">Technical Skills</h2>
+          <div class="resume-skill-grid">
+            <ul class="resume-skills">
+              <li><strong>Test, measurement and validation</strong>Instrumentation, Data Acquisition, Experimental Testing, Result Analysis</li>
+              <li><strong>PCB design and circuit simulation</strong>LTSpice, KiCad, Simulink, Proteus 9 Professional</li>
+              <li><strong>Development platforms</strong>STM32 (NUCLEO F103-RB), BASYS 3 (AMD FPGA), ESP32</li>
+            </ul>
+            <ul class="resume-skills">
+              <li><strong>Programming languages</strong>C, C++, Python, ARM Assembly (Cortex-M3), VHDL, MATLAB, Java, SQL, R</li>
+              <li><strong>Computer-Aided Engineering and Design (CAD)</strong>SolidWorks, AutoCAD, Ansys</li>
+              <li><strong>Office and documentation tools</strong>LATEX (Overleaf), Microsoft Office, LibreOffice, Google Workspace</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="languages-title">
+          <h2 id="languages-title">Languages</h2>
+          <ul class="resume-languages">
+            <li><strong>English</strong>C1</li>
+            <li><strong>French</strong>B2</li>
+            <li><strong>Valencian</strong>C1</li>
+            <li><strong>Spanish</strong>Native</li>
+          </ul>
+        </section>
+
+        <section class="resume-section" aria-labelledby="additional-info-title">
+          <h2 id="additional-info-title">Additional Information</h2>
+          <p>Valid driving license and own vehicle. Willingness to travel. You will find detailed descriptions of the projects I consider most interesting on this website, both on the homepage and in the portfolio section.</p>
+        </section>
+
+        <section class="project-card resume-pdf-card" aria-labelledby="resume-pdf-title">
+          <h2 id="resume-pdf-title">Full Resume (PDF)</h2>
+          <p>For a print-ready version, download the PDF.</p>
+          <div class="resume-pdf-actions">
+            <a class="button" href="../pdfs/Roberto_Ibanez_Mingarro_MSc.pdf" download aria-label="Download Resume PDF">Download Resume PDF</a>
+            <a class="button button-light" href="../pdfs/Roberto_Ibanez_Mingarro_MSc.pdf" target="_blank" rel="noopener" aria-label="Open Resume PDF in a new tab">Open PDF in new tab</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav>
+      <p>© 2026 Roberto Ibáñez Mingarro</p>
+    </footer>
+  </body>
 </html>
