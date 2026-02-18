@@ -198,10 +198,15 @@ a { color: inherit; }
 
 .project-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(240px, .8fr);
-  gap: 1rem 1.25rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, .75fr);
+  gap: .85rem 1.25rem;
   align-items: start;
-  margin-top: .4rem;
+  margin-top: .2rem;
+}
+
+.project-hero-intro {
+  display: grid;
+  gap: .75rem;
 }
 
 .tech-chips {
@@ -466,13 +471,17 @@ a { color: inherit; }
 }
 
 .lightbox-close {
-  position: absolute;
-  top: -2.8rem;
-  right: 0;
-  width: 2.2rem;
-  height: 2.2rem;
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top, 0px) + 8px);
+  right: max(16px, env(safe-area-inset-right, 0px) + 8px);
+  width: 44px;
+  height: 44px;
   font-size: 1.6rem;
   line-height: 1;
+  z-index: 1300;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox-nav {
@@ -603,6 +612,7 @@ body.lightbox-open {
 @media (max-width: 640px) {
   .project-grid { grid-template-columns: 1fr; }
   .project-hero-grid { grid-template-columns: 1fr; }
+  .project-spec-card { margin-top: .1rem; }
   .project-actions { flex-direction: column; align-items: flex-start; }
   .lightbox-dialog {
     width: min(96vw, 1100px);
