@@ -1,0 +1,159 @@
+/* =========================
+   Mobile/Tablet Cards (NO desktop changes)
+   ========================= */
+
+/* Tablet general: mejor ritmo, sin tocar desktop */
+@media (max-width: 1024px) {
+  .section-narrow { padding: 3.5rem 1.25rem; }
+  .hero-content { padding: 2rem 1.5rem 2rem clamp(6%, 7vw, 10%); }
+
+  .header-inner,
+  .project-hero-grid,
+  .project-layout,
+  .split-section {
+    min-width: 0;
+  }
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  iframe,
+  video,
+  embed,
+  object {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile/tablet: encapsular bloques lógicos en cards */
+@media (max-width: 820px) {
+  /* Title overflow safety */
+  .site-title {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 72vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Touch targets */
+  .button,
+  .btn,
+  .mobile-menu a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* PDF viewer: ancho completo y altura usable */
+  .pdf-viewer-panel {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+  .pdf-frame { height: 82vh; }
+
+  /* === Card pattern visuals only === */
+  .m-card {
+    background: rgba(0, 0, 0, 0.035);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 1.15rem;
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+
+  /* Mobile-safe media normalization for split rows and generic figures */
+  .m-card .split-media,
+  .m-card figure {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    float: none !important;
+    clear: both;
+  }
+
+  .m-card .split-media img,
+  .m-card figure img,
+  .m-card picture img,
+  .m-card > img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    float: none !important;
+    clear: both;
+    border-radius: 12px;
+  }
+
+  .m-card picture {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .m-card .split-media figcaption,
+  .m-card figcaption,
+  .m-card .caption,
+  .m-card .image-caption {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 0.65rem;
+    float: none !important;
+    clear: both;
+  }
+
+  /* Keep split rows stacked on small viewports */
+  .split-row,
+  .split-row.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .split-row.reverse .split-media,
+  .split-row.reverse .split-copy {
+    order: initial;
+  }
+
+  .container,
+  .section,
+  .section-narrow {
+    overflow-x: hidden;
+  }
+
+  /* Ritmo interno: separaciones coherentes */
+  .m-card > * + * {
+    margin-top: 0.85rem;
+  }
+
+  /* Si hay listas dentro */
+  .m-card ul,
+  .m-card ol {
+    padding-left: 1.2rem;
+  }
+}
+
+/* Mobile: densidad y respiración */
+@media (max-width: 640px) {
+  .header-inner { padding: 0.65rem 1rem; }
+  .hero { min-height: 92vh; }
+  .hero-content { padding: 1.85rem 1.1rem; }
+
+  /* En móvil, cards un poco más compactas */
+  .m-card {
+    border-radius: 14px;
+    padding: 1rem;
+  }
+}
