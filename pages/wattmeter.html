@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="es">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Wattmeter Project PDF | Roberto Ibáñez Mingarro</title><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../css/styles.css" /><script defer src="../js/main.js"></script></head>
-  <body data-page="portfolio"><a class="skip-link" href="#main-content">Saltar al contenido principal</a><header class="site-header" id="site-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Wattmeter PCB Design | Roberto Ibáñez Mingarro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header" id="site-header">
       <div class="header-inner">
         <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
 
@@ -38,5 +49,167 @@
           <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
         </div>
       </div>
-    </header><main id="main-content" class="page-main"><section class="pdf-layout" data-pdf-page data-pdf-src="../pdfs/Wattmeter_Portfolio.pdf" data-pdf-title="Wattmeter Portfolio"><aside class="pdf-sidebar"><h2>Pages</h2><p class="small">Use your browser's native PDF page controls.</p></aside><div class="pdf-viewer-panel"><div class="pdf-toolbar"><a class="button" href="../pdfs/Wattmeter_Portfolio.pdf" download>Download PDF</a><a class="button" href="./portfolio.html">Back to portfolio</a></div><div class="pdf-viewer"></div><p class="pdf-missing" hidden>No se encontró el PDF en <code>../pdfs/Wattmeter_Portfolio.pdf</code>. Añádelo para mostrar el documento completo.</p></div></section></main><footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer></body>
+    </header>
+
+    <main id="main-content" class="page-main project-page">
+      <section class="section-narrow project-hero">
+        <h1 class="page-title">Digital Wattmeter PCB Design (STM32 + KiCad)</h1>
+        <p class="project-meta">Engineering portfolio article · Schematic, PCB, fabrication, and bring-up evidence</p>
+        <p class="project-abstract">
+          End-to-end development of a digital wattmeter platform including analog front-end, HMI electronics,
+          PCB layout, in-house fabrication workflow, and hardware validation.
+        </p>
+        <div class="project-actions">
+          <a class="btn btn-primary" href="../pdfs/Wattmeter_Portfolio.pdf" download>Download Full PDF</a>
+          <a class="btn btn-secondary" href="./portfolio.html">Back to Portfolio</a>
+        </div>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>System Architecture</h2>
+          <ul>
+            <li>Top-level partition of sensing, analog conditioning, MCU processing, and user-interface functions.</li>
+            <li>Defines signal flow and implementation constraints for the complete wattmeter platform.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/wattmeter-architecture.jpg" alt="Wattmeter architecture overview" loading="lazy" />
+          <figcaption>Figure 1 — System architecture of the digital wattmeter platform.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/wattmeter-analog-schematic.jpg" alt="Analog stage schematic" loading="lazy" />
+          <figcaption>Figure 2 — Analog schematic including conditioning and measurement stages.</figcaption>
+        </figure>
+        <article>
+          <h2>Analog Schematic</h2>
+          <ul>
+            <li>Acquisition path designed for robust measurement quality and noise-aware conditioning.</li>
+            <li>Component-level choices aligned with calibration and manufacturability targets.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>HMI Schematic</h2>
+          <ul>
+            <li>User interface electronics and control logic integrated with the main embedded platform.</li>
+            <li>Design prioritizes readability, operational safety, and deterministic interaction.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/wattmeter-ihm-schematic.jpg" alt="HMI schematic" loading="lazy" />
+          <figcaption>Figure 3 — Human-machine interface schematic.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/wattmeter-analog-layout.jpg" alt="Analog board layout" loading="lazy" />
+          <figcaption>Figure 4 — Analog PCB layout with routing and grounding strategy.</figcaption>
+        </figure>
+        <article>
+          <h2>Analog PCB Layout</h2>
+          <ul>
+            <li>Placement/routing optimized for signal integrity and coupling control.</li>
+            <li>Clear separation between sensitive analog areas and digital activity.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>HMI PCB Layout</h2>
+          <ul>
+            <li>UI-focused layout balancing connector accessibility and board compactness.</li>
+            <li>Supports reliable assembly and serviceability.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/wattmeter-ihm-layout.jpg" alt="HMI board layout" loading="lazy" />
+          <figcaption>Figure 5 — HMI PCB layout implementation.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/wattmeter-lpkf-machine.jpg" alt="LPKF prototyping machine" loading="lazy" />
+          <figcaption>Figure 6 — PCB prototyping setup using LPKF equipment.</figcaption>
+        </figure>
+        <article>
+          <h2>Fabrication Setup</h2>
+          <ul>
+            <li>Rapid prototyping workflow configured for repeatable board production.</li>
+            <li>Process control centered on dimensional consistency and turnaround speed.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Isolation Milling</h2>
+          <ul>
+            <li>Isolation milling strategy used to realize traces and clearances in-house.</li>
+            <li>Toolpath and machining parameters tuned to reduce defects.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/wattmeter-isolation-milling.jpg" alt="Isolation milling process" loading="lazy" />
+          <figcaption>Figure 7 — Isolation milling operation during PCB manufacturing.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/wattmeter-fabricated-boards.jpg" alt="Fabricated boards" loading="lazy" />
+          <figcaption>Figure 8 — Fabricated bare boards after machining and inspection.</figcaption>
+        </figure>
+        <article>
+          <h2>Fabricated Boards</h2>
+          <ul>
+            <li>Post-process inspection verifies continuity, isolation, and dimensional tolerance.</li>
+            <li>Boards prepared for assembly and staged validation.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-narrow split-section">
+        <article>
+          <h2>Assembly</h2>
+          <ul>
+            <li>Controlled soldering sequence applied to analog and UI assemblies.</li>
+            <li>Rework criteria and visual inspection checkpoints ensure build quality.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="../assets/img/wattmeter-soldering.jpg" alt="Board soldering stage" loading="lazy" />
+          <figcaption>Figure 9 — Soldering and assembly phase.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-narrow split-section reverse">
+        <figure>
+          <img src="../assets/img/wattmeter-bringup.jpg" alt="Hardware bring-up test" loading="lazy" />
+          <figcaption>Figure 10 — Hardware bring-up and initial validation tests.</figcaption>
+        </figure>
+        <article>
+          <h2>Bring-up &amp; Validation</h2>
+          <ul>
+            <li>Incremental power-up and functional verification from rails to full operation.</li>
+            <li>Measurement consistency checks and issue tracking close the hardware loop.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="../pdfs/Wattmeter_Portfolio.pdf" download>Download Wattmeter_Portfolio.pdf</a>
+            <a class="btn btn-secondary" href="../pdfs/Wattmeter_Portfolio.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+  </body>
 </html>
