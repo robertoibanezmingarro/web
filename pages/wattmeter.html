@@ -56,160 +56,383 @@
         <h1 class="page-title">Digital Wattmeter PCB Design (STM32 + KiCad)</h1>
         <p class="project-meta">Engineering portfolio article · Schematic, PCB, fabrication, and bring-up evidence</p>
         <p class="project-abstract">
-          End-to-end development of a digital wattmeter platform including analog front-end, HMI electronics,
-          PCB layout, in-house fabrication workflow, and hardware validation.
+          End-to-end engineering of a digital wattmeter platform spanning analog front-end design, STM32 integration,
+          PCB layout and in-house fabrication. The implementation emphasizes manufacturable hardware decisions, clean
+          measurement paths, and repeatable validation from assembly through functional bring-up.
         </p>
-        <div class="project-actions">
-          <a class="btn btn-primary" href="../pdfs/Wattmeter_Portfolio.pdf" download>Download Full PDF</a>
-          <a class="btn btn-secondary" href="./portfolio.html">Back to Portfolio</a>
+
+        <div class="project-hero-grid">
+          <ul class="tech-chips" aria-label="Core technologies used in the project">
+            <li>STM32</li>
+            <li>KiCad</li>
+            <li>Analog front-end</li>
+            <li>PCB milling</li>
+            <li>Validation</li>
+          </ul>
+
+          <aside class="project-spec-card" aria-label="Project specifications">
+            <dl>
+              <div><dt>Role</dt><dd>Embedded hardware engineer</dd></div>
+              <div><dt>Scope</dt><dd>Architecture, schematic, PCB, fabrication, bring-up</dd></div>
+              <div><dt>Deliverables</dt><dd>Technical article + validated prototype boards</dd></div>
+              <div><dt>Date</dt><dd>2025</dd></div>
+            </dl>
+          </aside>
         </div>
       </section>
 
-      <section class="section-narrow split-section">
-        <article>
-          <h2>System Architecture</h2>
-          <ul>
-            <li>Top-level partition of sensing, analog conditioning, MCU processing, and user-interface functions.</li>
-            <li>Defines signal flow and implementation constraints for the complete wattmeter platform.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="../assets/img/wattmeter-architecture.jpg" alt="Wattmeter architecture overview" loading="lazy" />
-          <figcaption>Figure 1 — System architecture of the digital wattmeter platform.</figcaption>
-        </figure>
-      </section>
+      <div class="section-narrow project-layout">
+        <aside class="project-toc" aria-label="On this page">
+          <p class="project-toc-title">On this page</p>
+          <nav>
+            <ol id="project-toc-list"></ol>
+          </nav>
+        </aside>
 
-      <section class="section-narrow split-section reverse">
-        <figure>
-          <img src="../assets/img/wattmeter-analog-schematic.jpg" alt="Analog stage schematic" loading="lazy" />
-          <figcaption>Figure 2 — Analog schematic including conditioning and measurement stages.</figcaption>
-        </figure>
-        <article>
-          <h2>Analog Schematic</h2>
-          <ul>
-            <li>Acquisition path designed for robust measurement quality and noise-aware conditioning.</li>
-            <li>Component-level choices aligned with calibration and manufacturability targets.</li>
-          </ul>
-        </article>
-      </section>
+        <section class="project-jump" aria-label="Jump to section">
+          <label for="project-jump-select">Jump to section</label>
+          <select id="project-jump-select">
+            <option value="">Select a section</option>
+          </select>
+        </section>
 
-      <section class="section-narrow split-section">
-        <article>
-          <h2>HMI Schematic</h2>
-          <ul>
-            <li>User interface electronics and control logic integrated with the main embedded platform.</li>
-            <li>Design prioritizes readability, operational safety, and deterministic interaction.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="../assets/img/wattmeter-ihm-schematic.jpg" alt="HMI schematic" loading="lazy" />
-          <figcaption>Figure 3 — Human-machine interface schematic.</figcaption>
-        </figure>
-      </section>
+        <div class="project-content" id="project-content">
+          <section class="split-section">
+            <article>
+              <h2>System Architecture</h2>
+              <ul>
+                <li>Top-level partition of sensing, analog conditioning, MCU processing, and user-interface functions.</li>
+                <li>Defines signal flow and implementation constraints for the complete wattmeter platform.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/wattmeter-architecture.jpg" alt="Wattmeter architecture overview" loading="lazy" />
+              <figcaption>Figure 1 — System architecture of the digital wattmeter platform.</figcaption>
+            </figure>
+          </section>
 
-      <section class="section-narrow split-section reverse">
-        <figure>
-          <img src="../assets/img/wattmeter-analog-layout.jpg" alt="Analog board layout" loading="lazy" />
-          <figcaption>Figure 4 — Analog PCB layout with routing and grounding strategy.</figcaption>
-        </figure>
-        <article>
-          <h2>Analog PCB Layout</h2>
-          <ul>
-            <li>Placement/routing optimized for signal integrity and coupling control.</li>
-            <li>Clear separation between sensitive analog areas and digital activity.</li>
-          </ul>
-        </article>
-      </section>
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/wattmeter-analog-schematic.jpg" alt="Analog stage schematic" loading="lazy" />
+              <figcaption>Figure 2 — Analog schematic including conditioning and measurement stages.</figcaption>
+            </figure>
+            <article>
+              <h2>Analog Schematic</h2>
+              <ul>
+                <li>Acquisition path designed for robust measurement quality and noise-aware conditioning.</li>
+                <li>Component-level choices aligned with calibration and manufacturability targets.</li>
+              </ul>
+            </article>
+          </section>
 
-      <section class="section-narrow split-section">
-        <article>
-          <h2>HMI PCB Layout</h2>
-          <ul>
-            <li>UI-focused layout balancing connector accessibility and board compactness.</li>
-            <li>Supports reliable assembly and serviceability.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="../assets/img/wattmeter-ihm-layout.jpg" alt="HMI board layout" loading="lazy" />
-          <figcaption>Figure 5 — HMI PCB layout implementation.</figcaption>
-        </figure>
-      </section>
+          <section class="split-section">
+            <article>
+              <h2>HMI Schematic</h2>
+              <ul>
+                <li>User interface electronics and control logic integrated with the main embedded platform.</li>
+                <li>Design prioritizes readability, operational safety, and deterministic interaction.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/wattmeter-ihm-schematic.jpg" alt="HMI schematic" loading="lazy" />
+              <figcaption>Figure 3 — Human-machine interface schematic.</figcaption>
+            </figure>
+          </section>
 
-      <section class="section-narrow split-section reverse">
-        <figure>
-          <img src="../assets/img/wattmeter-lpkf-machine.jpg" alt="LPKF prototyping machine" loading="lazy" />
-          <figcaption>Figure 6 — PCB prototyping setup using LPKF equipment.</figcaption>
-        </figure>
-        <article>
-          <h2>Fabrication Setup</h2>
-          <ul>
-            <li>Rapid prototyping workflow configured for repeatable board production.</li>
-            <li>Process control centered on dimensional consistency and turnaround speed.</li>
-          </ul>
-        </article>
-      </section>
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/wattmeter-analog-layout.jpg" alt="Analog board layout" loading="lazy" />
+              <figcaption>Figure 4 — Analog PCB layout with routing and grounding strategy.</figcaption>
+            </figure>
+            <article>
+              <h2>Analog PCB Layout</h2>
+              <ul>
+                <li>Placement/routing optimized for signal integrity and coupling control.</li>
+                <li>Clear separation between sensitive analog areas and digital activity.</li>
+              </ul>
+            </article>
+          </section>
 
-      <section class="section-narrow split-section">
-        <article>
-          <h2>Isolation Milling</h2>
-          <ul>
-            <li>Isolation milling strategy used to realize traces and clearances in-house.</li>
-            <li>Toolpath and machining parameters tuned to reduce defects.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="../assets/img/wattmeter-isolation-milling.jpg" alt="Isolation milling process" loading="lazy" />
-          <figcaption>Figure 7 — Isolation milling operation during PCB manufacturing.</figcaption>
-        </figure>
-      </section>
+          <section class="split-section">
+            <article>
+              <h2>HMI PCB Layout</h2>
+              <ul>
+                <li>UI-focused layout balancing connector accessibility and board compactness.</li>
+                <li>Supports reliable assembly and serviceability.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/wattmeter-ihm-layout.jpg" alt="HMI board layout" loading="lazy" />
+              <figcaption>Figure 5 — HMI PCB layout implementation.</figcaption>
+            </figure>
+          </section>
 
-      <section class="section-narrow split-section reverse">
-        <figure>
-          <img src="../assets/img/wattmeter-fabricated-boards.jpg" alt="Fabricated boards" loading="lazy" />
-          <figcaption>Figure 8 — Fabricated bare boards after machining and inspection.</figcaption>
-        </figure>
-        <article>
-          <h2>Fabricated Boards</h2>
-          <ul>
-            <li>Post-process inspection verifies continuity, isolation, and dimensional tolerance.</li>
-            <li>Boards prepared for assembly and staged validation.</li>
-          </ul>
-        </article>
-      </section>
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/wattmeter-lpkf-machine.jpg" alt="LPKF prototyping machine" loading="lazy" />
+              <figcaption>Figure 6 — PCB prototyping setup using LPKF equipment.</figcaption>
+            </figure>
+            <article>
+              <h2>Fabrication Setup</h2>
+              <ul>
+                <li>Rapid prototyping workflow configured for repeatable board production.</li>
+                <li>Process control centered on dimensional consistency and turnaround speed.</li>
+              </ul>
+            </article>
+          </section>
 
-      <section class="section-narrow split-section">
-        <article>
-          <h2>Assembly</h2>
-          <ul>
-            <li>Controlled soldering sequence applied to analog and UI assemblies.</li>
-            <li>Rework criteria and visual inspection checkpoints ensure build quality.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="../assets/img/wattmeter-soldering.jpg" alt="Board soldering stage" loading="lazy" />
-          <figcaption>Figure 9 — Soldering and assembly phase.</figcaption>
-        </figure>
-      </section>
+          <section class="split-section">
+            <article>
+              <h2>Isolation Milling</h2>
+              <ul>
+                <li>Isolation milling strategy used to realize traces and clearances in-house.</li>
+                <li>Toolpath and machining parameters tuned to reduce defects.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/wattmeter-isolation-milling.jpg" alt="Isolation milling process" loading="lazy" />
+              <figcaption>Figure 7 — Isolation milling operation during PCB manufacturing.</figcaption>
+            </figure>
+          </section>
 
-      <section class="section-narrow split-section reverse">
-        <figure>
-          <img src="../assets/img/wattmeter-bringup.jpg" alt="Hardware bring-up test" loading="lazy" />
-          <figcaption>Figure 10 — Hardware bring-up and initial validation tests.</figcaption>
-        </figure>
-        <article>
-          <h2>Bring-up &amp; Validation</h2>
-          <ul>
-            <li>Incremental power-up and functional verification from rails to full operation.</li>
-            <li>Measurement consistency checks and issue tracking close the hardware loop.</li>
-          </ul>
-          <div class="project-actions">
-            <a class="btn btn-primary" href="../pdfs/Wattmeter_Portfolio.pdf" download>Download Wattmeter_Portfolio.pdf</a>
-            <a class="btn btn-secondary" href="../pdfs/Wattmeter_Portfolio.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
-          </div>
-        </article>
-      </section>
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/wattmeter-fabricated-boards.jpg" alt="Fabricated boards" loading="lazy" />
+              <figcaption>Figure 8 — Fabricated bare boards after machining and inspection.</figcaption>
+            </figure>
+            <article>
+              <h2>Fabricated Boards</h2>
+              <ul>
+                <li>Post-process inspection verifies continuity, isolation, and dimensional tolerance.</li>
+                <li>Boards prepared for assembly and staged validation.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Assembly</h2>
+              <ul>
+                <li>Controlled soldering sequence applied to analog and UI assemblies.</li>
+                <li>Rework criteria and visual inspection checkpoints ensure build quality.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/wattmeter-soldering.jpg" alt="Board soldering stage" loading="lazy" />
+              <figcaption>Figure 9 — Soldering and assembly phase.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/wattmeter-bringup.jpg" alt="Hardware bring-up test" loading="lazy" />
+              <figcaption>Figure 10 — Hardware bring-up and initial validation tests.</figcaption>
+            </figure>
+            <article>
+              <h2>Bring-up &amp; Validation</h2>
+              <ul>
+                <li>Incremental power-up and functional verification from rails to full operation.</li>
+                <li>Measurement consistency checks and issue tracking close the hardware loop.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="project-cta project-deliverables">
+            <h2>Deliverables</h2>
+            <p>This page captures the engineering narrative. The full PDF includes complete implementation details, validation evidence, and final manufacturing documentation.</p>
+            <div class="project-actions">
+              <a class="btn btn-primary" href="../pdfs/Wattmeter_Portfolio.pdf" download>Download full PDF</a>
+              <a class="btn btn-secondary" href="../pdfs/Wattmeter_Portfolio.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+
+    <script>
+      (() => {
+        const content = document.querySelector('#project-content');
+        const tocList = document.querySelector('#project-toc-list');
+        const jumpSelect = document.querySelector('#project-jump-select');
+        if (!content || !tocList || !jumpSelect) return;
+
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent || heading.id;
+          li.appendChild(link);
+          tocList.appendChild(li);
+
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = heading.textContent || heading.id;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
+        });
+
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
+
+        const figures = [...content.querySelectorAll('figure')];
+        const slides = figures
+          .map((figure) => {
+            const image = figure.querySelector('img');
+            if (!image) return null;
+            return {
+              src: image.getAttribute('src') || '',
+              alt: image.getAttribute('alt') || '',
+              caption: figure.querySelector('figcaption')?.textContent?.trim() || ''
+            };
+          })
+          .filter(Boolean);
+
+        if (!slides.length) return;
+
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.innerHTML = `
+          <div class="lightbox-backdrop" data-lightbox-close="true"></div>
+          <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview dialog">
+            <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+            <button class="lightbox-nav prev" type="button" aria-label="Show previous image">‹</button>
+            <figure class="lightbox-figure">
+              <img src="" alt="" />
+              <figcaption></figcaption>
+            </figure>
+            <button class="lightbox-nav next" type="button" aria-label="Show next image">›</button>
+            <div class="lightbox-zoom-controls">
+              <button type="button" class="zoom-out" aria-label="Zoom out">−</button>
+              <button type="button" class="zoom-reset" aria-label="Reset zoom">100%</button>
+              <button type="button" class="zoom-in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(lightbox);
+
+        const lightboxImage = lightbox.querySelector('img');
+        const lightboxCaption = lightbox.querySelector('figcaption');
+        let currentIndex = 0;
+        let currentScale = 1;
+
+        const clampScale = (value) => Math.max(1, Math.min(3, value));
+
+        const applyScale = () => {
+          lightboxImage.style.transform = `scale(${currentScale})`;
+        };
+
+        const updateSlide = (index) => {
+          currentIndex = (index + slides.length) % slides.length;
+          const slide = slides[currentIndex];
+          lightboxImage.src = slide.src;
+          lightboxImage.alt = slide.alt;
+          lightboxCaption.textContent = slide.caption;
+          currentScale = 1;
+          applyScale();
+        };
+
+        const openLightbox = (index) => {
+          updateSlide(index);
+          lightbox.classList.add('is-open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('lightbox-open');
+          lightbox.querySelector('.lightbox-close')?.focus();
+        };
+
+        const closeLightbox = () => {
+          lightbox.classList.remove('is-open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('lightbox-open');
+        };
+
+        figures.forEach((figure, index) => {
+          const image = figure.querySelector('img');
+          if (!image) return;
+          image.setAttribute('tabindex', '0');
+          image.classList.add('lightbox-trigger');
+          image.addEventListener('click', () => openLightbox(index));
+          image.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              openLightbox(index);
+            }
+          });
+        });
+
+        lightbox.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!(target instanceof HTMLElement)) return;
+          if (target.dataset.lightboxClose === 'true' || target.classList.contains('lightbox-close')) closeLightbox();
+          if (target.classList.contains('prev')) updateSlide(currentIndex - 1);
+          if (target.classList.contains('next')) updateSlide(currentIndex + 1);
+          if (target.classList.contains('zoom-in')) {
+            currentScale = clampScale(currentScale + 0.2);
+            applyScale();
+          }
+          if (target.classList.contains('zoom-out')) {
+            currentScale = clampScale(currentScale - 0.2);
+            applyScale();
+          }
+          if (target.classList.contains('zoom-reset')) {
+            currentScale = 1;
+            applyScale();
+          }
+        });
+
+        lightboxImage.addEventListener('wheel', (event) => {
+          event.preventDefault();
+          currentScale = clampScale(currentScale + (event.deltaY > 0 ? -0.1 : 0.1));
+          applyScale();
+        });
+
+        window.addEventListener('keydown', (event) => {
+          if (!lightbox.classList.contains('is-open')) return;
+          if (event.key === 'Escape') closeLightbox();
+          if (event.key === 'ArrowLeft') updateSlide(currentIndex - 1);
+          if (event.key === 'ArrowRight') updateSlide(currentIndex + 1);
+        });
+      })();
+    </script>
   </body>
 </html>
