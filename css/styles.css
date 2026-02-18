@@ -79,18 +79,37 @@ a { color: inherit; }
 .hero {
   min-height: 100vh;
   display: grid;
-  place-items: center;
-  text-align: center;
+  align-items: center;
+  justify-items: start;
+  text-align: left;
   color: #fff;
   position: relative;
+  overflow: hidden;
   background: url('../assets/img/hero.jpg') center / cover no-repeat fixed;
 }
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.15); }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 20, 24, 0.16) 0%,
+      rgba(18, 20, 24, 0.16) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.65) 35%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0) 85%
+    );
+  pointer-events: none;
+}
 .hero-content {
   position: relative;
   max-width: 900px;
-  padding: 2rem 2.25rem;
-  background: rgba(0, 0, 0, 0.75);
+  padding: 2rem 2.25rem 2rem clamp(10%, 12vw, 15%);
 }
 .hero h1 { font-size: clamp(1.75rem, 5vw, 3.1rem); margin: 0 0 1rem; font-weight: 600; }
 .hero p { margin: 0; font-size: clamp(0.95rem, 1.7vw, 1.1rem); }
@@ -183,6 +202,28 @@ a { color: inherit; }
   .header-inner { grid-template-columns: 1fr auto; margin: 0; }
   .pdf-layout { grid-template-columns: 1fr; }
   .pdf-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .hero {
+    justify-items: start;
+    text-align: left;
+  }
+  .hero::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(18, 20, 24, 0.14) 0%,
+        rgba(18, 20, 24, 0.14) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.74) 0%,
+        rgba(0, 0, 0, 0.56) 35%,
+        rgba(0, 0, 0, 0.28) 60%,
+        rgba(0, 0, 0, 0) 88%
+      );
+  }
+  .hero-content {
+    padding: 2rem 1.5rem 2rem clamp(7%, 9vw, 10%);
+  }
 }
 @media (max-width: 640px) {
   .project-grid { grid-template-columns: 1fr; }
