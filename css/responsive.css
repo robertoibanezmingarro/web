@@ -44,6 +44,30 @@
     padding-left: 0;
   }
 
+  /* Igualar tablet/móvil de Sailboat + MP4 con Wattmeter (sin tocar desktop) */
+  .project-page--sailboat .project-layout,
+  .project-page--mp4 .project-layout {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .project-page--sailboat .project-toc,
+  .project-page--mp4 .project-toc,
+  .project-page--sailboat .project-jump,
+  .project-page--mp4 .project-jump {
+    display: none !important;
+  }
+
+  .project-page--sailboat .project-content > .split-section,
+  .project-page--mp4 .project-content > .split-section {
+    padding: 2.4rem 0;
+  }
+
+  .project-page--sailboat .project-content > .split-section:first-child,
+  .project-page--mp4 .project-content > .split-section:first-child {
+    padding-top: .15rem;
+  }
+
   .header-inner,
   .project-hero-grid,
   .project-layout,
