@@ -361,7 +361,9 @@
         const clampScale = (value) => Math.max(1, Math.min(3, value));
 
         const applyScale = () => {
-          lightboxImage.style.transform = `scale(${currentScale})`;
+          lightboxImage.style.width = `${currentScale * 100}%`;
+          lightboxImage.style.maxWidth = 'none';
+          lightboxImage.style.height = 'auto';
         };
 
         const updateSlide = (index) => {
@@ -372,6 +374,11 @@
           lightboxCaption.textContent = slide.caption;
           currentScale = 1;
           applyScale();
+          const figure = lightbox.querySelector('.lightbox-figure');
+          if (figure) {
+            figure.scrollTop = 0;
+            figure.scrollLeft = 0;
+          }
         };
 
         const openLightbox = (index) => {
