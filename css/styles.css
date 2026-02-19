@@ -593,6 +593,14 @@ a { color: inherit; }
   opacity: 0.9;
 }
 
+@media (min-width: 1025px) {
+  .background .section-lede {
+    margin-left: clamp(14px, 2.2vw, 18px);
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 .timeline {
   display: grid;
   gap: clamp(18px, 3vw, 28px);
