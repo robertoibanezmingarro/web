@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8-bit Pipelined RISC CPU (VHDL + FPGA) | Roberto Ibáñez Mingarro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="./portfolio.html" data-nav="portfolio">Portfolio</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+
+        <div class="social-links" aria-label="Enlaces sociales">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.1c.53-1 1.83-2.2 3.77-2.2C19.2 8 21 10.1 21 14.1V24h-4v-8.6c0-2.05-.04-4.7-2.87-4.7-2.87 0-3.31 2.24-3.31 4.55V24h-4V8Z"/></svg>
+          </a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.74.5 12.21c0 5.18 3.3 9.57 7.88 11.12.58.11.8-.26.8-.58 0-.29-.01-1.06-.02-2.08-3.2.71-3.88-1.58-3.88-1.58-.52-1.36-1.28-1.72-1.28-1.72-1.05-.73.08-.72.08-.72 1.16.08 1.76 1.22 1.76 1.22 1.03 1.81 2.7 1.29 3.36.99.1-.76.4-1.29.72-1.59-2.56-.3-5.26-1.32-5.26-5.86 0-1.3.45-2.36 1.2-3.19-.12-.3-.52-1.51.12-3.15 0 0 .98-.32 3.2 1.22a10.73 10.73 0 0 1 5.82 0c2.22-1.54 3.2-1.22 3.2-1.22.64 1.64.24 2.85.12 3.15.74.83 1.2 1.89 1.2 3.2 0 4.55-2.7 5.56-5.28 5.86.41.36.78 1.08.78 2.19 0 1.58-.02 2.86-.02 3.25 0 .32.21.7.8.58A11.74 11.74 0 0 0 23.5 12.2C23.5 5.75 18.35.5 12 .5Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav aria-label="Navegación móvil">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="./portfolio.html" data-nav="portfolio">Portfolio</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main project-page project-page--cpu">
+      <section class="section-narrow project-hero">
+        <h1 class="page-title">8-bit Five-Stage Pipelined RISC Microprocessor (VHDL → FPGA)</h1>
+        <div class="project-hero-grid">
+          <div class="project-hero-intro">
+            <p class="project-meta">Microarchitecture + synthesizable RTL · hazard-aware pipeline · full toolflow validation</p>
+            <p class="project-abstract">
+              This CPU implements a fixed instruction encoding over an 8-bit datapath with 16 general-purpose registers and a strict Load/Store model.
+              The architecture is partitioned into a five-stage pipeline with explicit stage boundaries and deterministic commit behavior.
+              Validation combines waveform-level verification and FPGA synthesis/place-and-route evidence.
+            </p>
+
+            <ul class="tech-chips" aria-label="Core technologies used in the project">
+              <li>VHDL</li>
+              <li>Vivado</li>
+              <li>Artix-7 (Basys 3)</li>
+              <li>Pipeline</li>
+              <li>Hazards</li>
+              <li>BRAM</li>
+              <li>Timing closure</li>
+            </ul>
+          </div>
+
+          <aside class="project-spec-card" aria-label="Project specifications">
+            <dl>
+              <div><dt>Role</dt><dd>RTL / verification engineer</dd></div>
+              <div><dt>Scope</dt><dd>microarchitecture, RTL, testbench, synthesis, P&amp;R</dd></div>
+              <div><dt>Deliverables</dt><dd>CPU core + validation evidence + portfolio PDF</dd></div>
+              <div><dt>Date</dt><dd>2025–2026</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <div class="section-narrow project-layout">
+        <aside class="project-toc" aria-label="On this page">
+          <p class="project-toc-title">On this page</p>
+          <nav>
+            <ol id="project-toc-list"></ol>
+          </nav>
+        </aside>
+
+        <section class="project-jump" aria-label="Jump to section">
+          <label for="project-jump-select">Jump to section</label>
+          <select id="project-jump-select">
+            <option value="">Select a section</option>
+          </select>
+        </section>
+
+        <div class="project-content" id="project-content">
+          <section class="split-section">
+            <article>
+              <h2 data-toc="Design Philosophy">Design Philosophy: Silicon-Disciplined RTL</h2>
+              <ul>
+                <li>Microarchitecture choices were treated as implementation-bound decisions shaped by routing, clocks, fanout, and critical paths.</li>
+                <li>Each stage owns explicit logic and synchronous state boundaries to avoid timing ambiguity.</li>
+                <li>The RTL was structured for deterministic behavior and survivability across synthesis and place-and-route.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cpu/RISCV.jpg" alt="RISC CPU design concept" loading="lazy" />
+              <figcaption>Figure 1 — Design intent aligned with implementation reality.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cpu/architecture_global.png" alt="Global five-stage CPU architecture" loading="lazy" />
+              <figcaption>Figure 2 — Five-stage datapath and control partitioning.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="Pipeline Contract">Pipeline Contract: Five-Stage Datapath Partitioning</h2>
+              <ul>
+                <li>The datapath is partitioned into LI / DI / EX / MEM / ER stages with clear responsibilities.</li>
+                <li>Pipeline registers are explicitly inserted at each stage boundary.</li>
+                <li>Load/Store paths are separated from compute paths with predictable stage latency.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="Basys 3 Platform">FPGA Deployment Platform (Basys 3 / Artix-7)</h2>
+              <ul>
+                <li>Basys 3 provides realistic clocking infrastructure, BRAM/DSP resources, and enough fabric for constrained implementation.</li>
+                <li>It serves as the toolflow endpoint from synthesis to place-and-route under real constraints.</li>
+                <li>Bring-up stays deterministic through fully synchronous design assumptions.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cpu/basys3.jpg" alt="Basys 3 Artix-7 FPGA board" loading="lazy" />
+              <figcaption>Figure 3 — Target FPGA platform for implementation closure.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cpu/cpu.png" alt="Top-level CPU RTL integration" loading="lazy" />
+              <figcaption>Figure 4 — Top-level decomposition and interface ownership.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="Top Integration">Top-Level Integration: RTL Decomposition and Signal Ownership</h2>
+              <ul>
+                <li>The top level decomposes into ALU, register file, instruction memory, data memory, and control.</li>
+                <li>Control is stage-local to keep fanout bounded and timing pressure contained.</li>
+                <li>The structure is fully synthesizable with no ambiguous combinational feedback loops.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="ALU &amp; Flags">Execution Core: ALU + Flag Semantics</h2>
+              <ul>
+                <li>Add/sub datapaths and operation muxing depth are the primary EX-stage timing risk.</li>
+                <li>MUL operations are resource-disciplined and mapped to DSP blocks where applicable.</li>
+                <li>N / C / O flags are produced deterministically and aligned with commit semantics.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cpu/alu.png" alt="ALU datapath and flags" loading="lazy" />
+              <figcaption>Figure 5 — Execution core and deterministic flag generation.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cpu/RF.png" alt="Register file architecture" loading="lazy" />
+              <figcaption>Figure 6 — Register file with write collision bypass behavior.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="Register File">Register File: Dual-Read, Single-Write with Collision Bypass</h2>
+              <ul>
+                <li>The register file implements 16×8 storage with 2R1W access.</li>
+                <li>A same-cycle RAW collision path applies write-first bypass behavior.</li>
+                <li>This bypass lowers bubble insertion and reduces hazard pressure.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="DMEM">Memory Subsystem: Synchronous DMEM (Load/Store Boundary)</h2>
+              <ul>
+                <li>Data memory follows synchronous access discipline for predictable behavior.</li>
+                <li>Latency is deterministic and inference is FPGA-friendly.</li>
+                <li>Load/Store logic remains cleanly separated from compute operations.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cpu/dmem.png" alt="Synchronous data memory block" loading="lazy" />
+              <figcaption>Figure 7 — DMEM organization at the Load/Store boundary.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cpu/imem.png" alt="Instruction memory implementation" loading="lazy" />
+              <figcaption>Figure 8 — IMEM organization with stable instruction image.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="IMEM">Instruction Fetch: ROM-like IMEM and Stable Program Image</h2>
+              <ul>
+                <li>Instruction memory exposes a stable program image with synchronous readout.</li>
+                <li>Fetch behavior is consistent with pipeline timing assumptions.</li>
+                <li>The model stays clear for both simulation intent and synthesis mapping.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="Verification">Waveform-Level Verification: Stage-by-Stage Proof</h2>
+              <ul>
+                <li>The testbench checks stage propagation, commit timing, and Load/Store correctness.</li>
+                <li>Waveforms provide cycle-accurate visibility into hazards and control decisions.</li>
+                <li>Verification evidence anchors the architectural contract to observed behavior.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cpu/tb.png" alt="CPU testbench waveform results" loading="lazy" />
+              <figcaption>Figure 9 — Testbench waveforms proving stage-level behavior.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cpu/cpu_zoom_1.png" alt="Post-implementation FPGA view" loading="lazy" />
+              <figcaption>Figure 10 — Post-implementation mapping and locality check.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="Physical Mapping">Physical Realization: Post-Implementation FPGA Mapping</h2>
+              <ul>
+                <li>Placement and routing were reviewed for congestion, locality, and structural cleanliness.</li>
+                <li>The view confirms the RTL remains coherent after tool transformations.</li>
+                <li>EX depth and control fanout typically bound fMAX.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="Region View">Second Region View: Routing Density and Floorplan Distribution</h2>
+              <ul>
+                <li>This second region corroborates routing density and floorplan distribution.</li>
+                <li>It highlights whether the design is tool-hostile or structurally disciplined.</li>
+                <li>The result reinforces a hardware-is-the-truth validation posture.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cpu/cpu_zoom_2.png" alt="Second FPGA region routing view" loading="lazy" />
+              <figcaption>Figure 11 — Additional floorplan region for routing density assessment.</figcaption>
+            </figure>
+          </section>
+
+          <section class="project-cta project-deliverables">
+            <h2>Deliverables</h2>
+            <p>This page summarizes the implementation. The PDF captures full architecture, verification traces, and FPGA implementation evidence.</p>
+            <div class="project-actions">
+              <a class="btn btn-primary" href="../assets/pdf/Portfolio_CPU.pdf" download>Download full PDF</a>
+              <a class="btn btn-secondary" href="../assets/pdf/Portfolio_CPU.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+
+    <script>
+      (() => {
+        const content = document.querySelector('#project-content');
+        const tocList = document.querySelector('#project-toc-list');
+        const jumpSelect = document.querySelector('#project-jump-select');
+        if (!content || !tocList || !jumpSelect) return;
+
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const tocLabel = heading.dataset.toc || heading.textContent || heading.id;
+
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = tocLabel;
+          li.appendChild(link);
+          tocList.appendChild(li);
+
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = tocLabel;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
+        });
+
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
+      })();
+    </script>
+  </body>
+</html>
