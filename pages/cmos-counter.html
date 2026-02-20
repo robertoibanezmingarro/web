@@ -240,34 +240,63 @@
         const jumpSelect = document.querySelector('#project-jump-select');
         if (!content || !tocList || !jumpSelect) return;
 
-        const sections = Array.from(content.querySelectorAll('h2'));
-        const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
 
-        sections.forEach((heading, idx) => {
-          const title = heading.dataset.toc || heading.textContent.trim();
-          const id = heading.id || `section-${idx + 1}-${slugify(title)}`;
-          heading.id = id;
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const tocLabel = heading.dataset.toc || heading.textContent || heading.id;
 
           const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = `#${id}`;
-          a.textContent = title;
-          li.appendChild(a);
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = tocLabel;
+          li.appendChild(link);
           tocList.appendChild(li);
 
-          const opt = document.createElement('option');
-          opt.value = id;
-          opt.textContent = title;
-          jumpSelect.appendChild(opt);
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = tocLabel;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
         });
 
-        jumpSelect.addEventListener('change', () => {
-          const id = jumpSelect.value;
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
           if (!id) return;
           const target = document.getElementById(id);
-          if (!target) return;
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
       })();
     </script>
   </body>
