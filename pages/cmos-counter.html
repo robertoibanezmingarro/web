@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full-Custom CMOS 3-Bit Synchronous Counter | Roberto Ibáñez Mingarro</title>
+    <meta
+      name="description"
+      content="Full-custom CMOS 3-bit synchronous counter designed at transistor level and validated post-layout at 0.65 V. Timing, parasitics, and power characterization included."
+    />
+    <meta property="og:title" content="Full-Custom CMOS 3-Bit Synchronous Counter" />
+    <meta
+      property="og:description"
+      content="Full-custom CMOS 3-bit synchronous counter designed at transistor level and validated post-layout at 0.65 V. Timing, parasitics, and power characterization included."
+    />
+    <meta property="og:image" content="../assets/img/cmos-thumb.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="./portfolio.html" data-nav="portfolio">Portfolio</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+
+        <div class="social-links" aria-label="Enlaces sociales">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.1c.53-1 1.83-2.2 3.77-2.2C19.2 8 21 10.1 21 14.1V24h-4v-8.6c0-2.05-.04-4.7-2.87-4.7-2.87 0-3.31 2.24-3.31 4.55V24h-4V8Z"/></svg>
+          </a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.74.5 12.21c0 5.18 3.3 9.57 7.88 11.12.58.11.8-.26.8-.58 0-.29-.01-1.06-.02-2.08-3.2.71-3.88-1.58-3.88-1.58-.52-1.36-1.28-1.72-1.28-1.72-1.05-.73.08-.72.08-.72 1.16.08 1.76 1.22 1.76 1.22 1.03 1.81 2.7 1.29 3.36.99.1-.76.4-1.29.72-1.59-2.56-.3-5.26-1.32-5.26-5.86 0-1.3.45-2.36 1.2-3.19-.12-.3-.52-1.51.12-3.15 0 0 .98-.32 3.2 1.22a10.73 10.73 0 0 1 5.82 0c2.22-1.54 3.2-1.22 3.2-1.22.64 1.64.24 2.85.12 3.15.74.83 1.2 1.89 1.2 3.2 0 4.55-2.7 5.56-5.28 5.86.41.36.78 1.08.78 2.19 0 1.58-.02 2.86-.02 3.25 0 .32.21.7.8.58A11.74 11.74 0 0 0 23.5 12.2C23.5 5.75 18.35.5 12 .5Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav aria-label="Navegación móvil">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="./portfolio.html" data-nav="portfolio">Portfolio</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main project-page">
+      <section class="section-narrow project-hero">
+        <h1 class="page-title">Full-Custom CMOS 3-Bit Synchronous Counter</h1>
+        <div class="project-hero-grid">
+          <div class="project-hero-intro">
+            <p class="project-meta">Transistor-Level Design and Post-Layout Characterization</p>
+            <p class="project-abstract">
+              A full-custom 3-bit synchronous CMOS counter implemented at transistor level and validated post-layout at VDD = 0.65 V.
+              Intrinsic gate delay does not define system frequency — sequential timing closure and clock integrity ultimately bound performance.
+              Propagation delays range from 90 ps to 172 ps across process corners.
+            </p>
+
+            <ul class="tech-chips" aria-label="Core technologies used in the project">
+              <li>full-custom CMOS</li>
+              <li>synchronous counter</li>
+              <li>VDD 0.65 V</li>
+              <li>post-layout validation</li>
+              <li>Microwind</li>
+            </ul>
+
+          </div>
+
+          <aside class="project-spec-card" aria-label="Project specifications">
+            <dl>
+              <div><dt>Category</dt><dd>Integrated Circuits / Full-Custom CMOS / Low-Voltage Design</dd></div>
+              <div><dt>Keywords</dt><dd>master-slave flip-flop, parasitics, Miller effect, sequential timing, process corners</dd></div>
+              <div><dt>Scope</dt><dd>transistor-level implementation, extraction-aware analysis, timing and power interpretation</dd></div>
+              <div><dt>Date</dt><dd>2026</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <div class="section-narrow project-layout">
+        <aside class="project-toc" aria-label="On this page">
+          <p class="project-toc-title">On this page</p>
+          <nav>
+            <ol id="project-toc-list"></ol>
+          </nav>
+        </aside>
+
+        <section class="project-jump" aria-label="Jump to section">
+          <label for="project-jump-select">Jump to section</label>
+          <select id="project-jump-select">
+            <option value="">Select a section</option>
+          </select>
+        </section>
+
+        <div class="project-content" id="project-content">
+          <section class="split-section">
+            <article>
+              <h2 data-toc="Design Goals">Design Goals &amp; Context</h2>
+              <ul>
+                <li>The architecture is a fully synchronous 3-bit up-counter with edge-aligned state transitions.</li>
+                <li>State storage uses a master-slave edge-triggered strategy to eliminate level transparency.</li>
+                <li>The design targets low-voltage operation at VDD = 0.65 V, where timing and noise margins tighten.</li>
+                <li>Validation is performed post-layout with extracted parasitic effects and process-corner awareness.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cmos/expected_waveform.png" alt="Expected waveform of a synchronous 3-bit up-counter showing binary count transitions per clock edge" loading="lazy" />
+              <figcaption>Expected synchronous counting sequence.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cmos/inverter_layout.png" alt="Full-custom CMOS inverter layout highlighting PMOS/NMOS sizing used for rise/fall balance at low supply voltage" loading="lazy" />
+              <figcaption>Full-custom CMOS inverter layout used as electrical reference.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="CMOS Inverter">CMOS Inverter (Reference Cell)</h2>
+              <ul>
+                <li>The inverter serves as the electrical reference cell for delay, power, and transition quality.</li>
+                <li>PMOS/NMOS geometry is tuned to compensate mobility mismatch and improve rise/fall symmetry.</li>
+                <li>At 0.65 V, transfer characteristics become highly sensitive to threshold and layout parasitics.</li>
+                <li>Extracted parasitic capacitances are tracked to keep the reference realistic for higher-level timing.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="NAND Gate">NAND Gate (Static CMOS)</h2>
+              <ul>
+                <li>Series NMOS devices introduce stack effect and increase equivalent pull-down resistance.</li>
+                <li>Diffusion sharing reduces area and interconnect length but shifts node capacitance distribution.</li>
+                <li>Charge-sharing behavior is evaluated to avoid dynamic voltage droop on internal nodes.</li>
+                <li>The cell is characterized as a representative logic stage under low-VDD switching conditions.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cmos/nand_layout.png" alt="Static CMOS NAND gate full-custom layout with shared diffusion regions for compact routing" loading="lazy" />
+              <figcaption>Static CMOS NAND gate layout with diffusion sharing.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cmos/dff_layout.png" alt="Transistor-level master-slave D flip-flop layout showing clocked latch stages and critical internal nodes" loading="lazy" />
+              <figcaption>Transistor-level master–slave D flip-flop layout.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="D Flip-Flop">Master–Slave D Flip-Flop</h2>
+              <ul>
+                <li>The storage element uses an edge-triggered topology to avoid level-sensitive transparency windows.</li>
+                <li>Sequential timing is evaluated through tCQ, tsetup, and thold to bound synchronous operation.</li>
+                <li>Internal dynamic nodes are treated as parasitic-sensitive points under clock activity.</li>
+                <li>Clocked transistor sizing prioritizes robust state transfer under low-voltage constraints.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2 data-toc="Full Integration">Full Counter Integration</h2>
+              <ul>
+                <li>Clock routing is prioritized to limit skew and preserve edge simultaneity across flip-flops.</li>
+                <li>Critical nodes are kept compact to minimize parasitic loading and dynamic coupling.</li>
+                <li>Integration is performed with extraction-aware placement to preserve sequential timing margins.</li>
+                <li>Layout symmetry is used where possible to reduce imbalance between bit-slice paths.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/cmos/counter_full_layout.png" alt="Complete full-custom 3-bit synchronous CMOS counter layout with integrated combinational and sequential blocks" loading="lazy" />
+              <figcaption>Complete 3-bit synchronous counter full-custom layout.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/cmos/transient_results.png" alt="Post-layout transient simulation showing clean binary counting sequence and synchronized state transitions" loading="lazy" />
+              <figcaption>Post-layout transient waveforms showing correct synchronous operation.</figcaption>
+            </figure>
+            <article>
+              <h2 data-toc="Transient Validation">Post-Layout Transient Validation</h2>
+              <ul>
+                <li>Microwind post-layout extraction is used to include routing and device parasitics in simulation.</li>
+                <li>The counter is exercised under high-frequency excitation to stress timing robustness.</li>
+                <li>The expected binary sequence is preserved across cycles with no state corruption.</li>
+                <li>No metastability events are observed within the simulated operating envelope.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="project-cta">
+            <h2 data-toc="Timing &amp; Power">Timing &amp; Power Interpretation</h2>
+            <p>
+              Measured propagation delay spans 90 ps to 172 ps across process corners. Individual gate delay does not set system fmax;
+              sequential closure dominates and must satisfy Tclk ≥ tCQ + tlogic + tsetup + tskew + tmargin. Power varies significantly with
+              process and activity corner assumptions, while dynamic behavior follows the expected V²DD dependence.
+            </p>
+          </section>
+
+          <section class="project-cta project-deliverables">
+            <h2 data-toc="Deliverables">Deliverables</h2>
+            <p>
+              This page summarizes the architecture and post-layout characterization flow. The complete technical document includes
+              extraction setup, waveforms, corner sweeps, and full implementation evidence.
+            </p>
+            <div class="project-actions">
+              <a class="btn btn-primary" href="../assets/pdf/Portfolio_CMOS.pdf" download>Download full PDF</a>
+              <a class="btn btn-secondary" href="../assets/pdf/Portfolio_CMOS.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+
+    <script>
+      (() => {
+        const content = document.querySelector('#project-content');
+        const tocList = document.querySelector('#project-toc-list');
+        const jumpSelect = document.querySelector('#project-jump-select');
+        if (!content || !tocList || !jumpSelect) return;
+
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const tocLabel = heading.dataset.toc || heading.textContent || heading.id;
+
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = tocLabel;
+          li.appendChild(link);
+          tocList.appendChild(li);
+
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = tocLabel;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
+        });
+
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
+      })();
+    </script>
+  </body>
+</html>
