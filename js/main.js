@@ -83,24 +83,6 @@ function initImageFallbacks() {
   });
 }
 
-async function initHeroFallback() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  const repo = guessRepoSegment();
-  const heroCandidates = [
-    'assets/img/hero.jpg',
-    './assets/img/hero.jpg',
-    'assets/hero.jpg',
-    './assets/hero.jpg',
-    `/${repo}/assets/img/hero.jpg`,
-    `/${repo}/assets/hero.jpg`,
-  ];
-
-  const resolvedHero = await firstExistingPath(heroCandidates);
-  if (resolvedHero) hero.style.backgroundImage = `url('${resolvedHero}')`;
-}
-
 function buildPdfCandidates(src) {
   return [
     src,
@@ -140,5 +122,4 @@ async function initPdfEmbed() {
 }
 
 initImageFallbacks();
-initHeroFallback();
 initPdfEmbed();
