@@ -104,127 +104,125 @@
             <article>
               <h2>Global Architecture / Experimental Setup</h2>
               <p>
-                The setup closes the loop between MATLAB/Simulink and National Instruments hardware for repeatable excitation and synchronized acquisition.
-                This architecture enables direct transition from test-bench measurements to control-oriented data processing.
+                Figure 1 shows the Simulink-based test architecture used to identify the transfer functions of the generator system.
+                The setup links MATLAB/Simulink with National Instruments hardware for synchronized excitation and acquisition.
               </p>
             </article>
             <figure>
-              <img src="../assets/img/motor-generator/project_auto_1.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_1.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Experimental setup with Simulink and NI hardware" loading="lazy" />
-              <figcaption>Real-time experimental loop integrating MATLAB/Simulink with National Instruments hardware for closed-loop signal injection and acquisition.</figcaption>
+              <img src="../assets/img/project_auto_1.png" alt="Experimental setup with Simulink and NI hardware" loading="lazy" />
+              <figcaption>Simulink experimental scheme used for transfer-function identification.</figcaption>
             </figure>
           </section>
 
-          <section class="split-section reverse">
-            <figure>
-              <img src="../assets/img/motor-generator/project_auto_2.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_2.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Chirp identification validation" loading="lazy" />
-              <figcaption>Chirp-based identification capturing the dominant system dynamics with consistent time-domain fitting across model orders.</figcaption>
-            </figure>
+          <section class="split-section">
             <article>
-              <h2>Identification Methodology</h2>
+              <h2>Identification Methodology (Chirp)</h2>
               <p>
-                The campaign evaluates MLBS, chirp, and multisine excitations over sampling times of 0.05 s, 0.01 s, and 0.002 s.
-                Model orders 1, 2, and 3 are estimated under the same protocol to isolate excitation and discretization effects.
+                Figure 2 validates the model identified with chirp excitation.
+                The comparison confirms that the estimated transfer function reproduces the measured dynamics under the same operating conditions.
               </p>
             </article>
+            <figure>
+              <img src="../assets/img/project_auto_2.png" alt="Chirp identification validation" loading="lazy" />
+              <figcaption>Validation result for chirp-based identification.</figcaption>
+            </figure>
           </section>
 
           <section class="split-section">
             <article>
               <h2>Model Validation and Signal Comparison</h2>
               <p>
-                Time-domain overlays show stable fitting with chirp and the strongest consistency with MLBS, while multisine remains less reliable.
-                Despite higher-order candidates, the first-order model is retained as the best engineering trade-off between fidelity and deployability.
+                Figure 3 corresponds to the validation obtained with MLBS excitation.
+                The MLBS case is presented here with its own explanation so it remains clearly paired with the associated plot.
               </p>
             </article>
             <figure>
-              <img src="../assets/img/motor-generator/project_auto_3.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_3.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="MLBS validation best case" loading="lazy" />
-              <figcaption>MLBS excitation providing the most reliable identification, ensuring strong excitation over the full frequency band.</figcaption>
+              <img src="../assets/img/project_auto_3.png" alt="MLBS validation best case" loading="lazy" />
+              <figcaption>Validation result for MLBS-based identification.</figcaption>
             </figure>
           </section>
 
-          <section class="split-section reverse">
-            <figure>
-              <img src="../assets/img/motor-generator/project_auto_4.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_4.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Multisine validation poor case" loading="lazy" />
-              <figcaption>Multisine excitation showing poor identification quality, highlighting sensitivity to signal design in system identification.</figcaption>
-            </figure>
+          <section class="split-section">
             <article>
-              <h2>Frequency-Domain Analysis</h2>
+              <h2>Validation with Multisine Excitation</h2>
               <p>
-                Bode inspection confirms first-order dominant behavior and supports reduced-order control design.
-                Cross-checks across excitation families prevent overfitting to one test profile and improve confidence in selected dynamics.
+                Figure 4 corresponds to the multisine validation case.
+                It is shown here next to its specific explanation to avoid confusion with the other excitation families.
               </p>
             </article>
+            <figure>
+              <img src="../assets/img/project_auto_4.png" alt="Multisine validation poor case" loading="lazy" />
+              <figcaption>Validation result obtained with multisine excitation.</figcaption>
+            </figure>
           </section>
 
           <section class="split-section">
             <article>
               <h2>Load Influence Analysis</h2>
               <p>
-                Load changes modify both static gain and pole location, proving that the plant cannot be treated as load-invariant.
-                This observation drives conservative controller tuning and operating-point-aware validation.
+                Figure 5 is the Bode diagram corresponding to the MLBS identification workflow.
+                It is placed in this section to keep frequency-domain interpretation directly associated with the correct figure.
               </p>
             </article>
             <figure>
-              <img src="../assets/img/motor-generator/project_auto_5.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_5.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Bode plot sampling time comparison" loading="lazy" />
-              <figcaption>Frequency response consistency across sampling times, confirming robustness of the identified first-order dynamics.</figcaption>
+              <img src="../assets/img/project_auto_5.png" alt="Bode plot sampling time comparison" loading="lazy" />
+              <figcaption>Bode diagram associated with the MLBS identification case.</figcaption>
             </figure>
-          </section>
-
-          <section class="split-section reverse">
-            <figure>
-              <img src="../assets/img/motor-generator/project_auto_6.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_6.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Identified transfer functions table" loading="lazy" />
-              <figcaption>Comparison of identified transfer functions across signals, sampling times, and model orders.</figcaption>
-            </figure>
-            <article>
-              <h2>Control Strategy (PI)</h2>
-              <p>
-                Since the plant has no integrator, PI control is selected to guarantee zero steady-state error on output voltage regulation.
-                Tuning prioritizes robustness and actuator realism over aggressive transient targets.
-              </p>
-            </article>
           </section>
 
           <section class="split-section">
             <article>
-              <h2>Experimental Validation</h2>
+              <h2>Identified Transfer Functions (Orders 1 and 2)</h2>
               <p>
-                Closed-loop tests confirm disturbance rejection under variable loading, with regulation centered around 9 V due to hardware limits.
-                The 12 V target was intentionally relaxed to preserve repeatability and avoid non-representative stress conditions.
+                Figure 6 is the summary table of identified transfer functions for first- and second-order models.
+                This section is intentionally dedicated to identification results before introducing control.
               </p>
             </article>
             <figure>
-              <img src="../assets/img/motor-generator/project_auto_7.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_7.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Oscilloscope load influence" loading="lazy" />
-              <figcaption>Direct observation of output voltage variations under changing load conditions.</figcaption>
+              <img src="../assets/img/project_auto_6.png" alt="Identified transfer functions table" loading="lazy" />
+              <figcaption>Table of identified transfer functions (order 1 and order 2).</figcaption>
             </figure>
-          </section>
-
-          <section class="split-section reverse">
-            <figure>
-              <img src="../assets/img/motor-generator/project_auto_8.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_8.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Closed-loop PI control architecture" loading="lazy" />
-              <figcaption>Discrete PI control loop implemented on the real system for voltage regulation.</figcaption>
-            </figure>
-            <article>
-              <h3>Closed-Loop Response</h3>
-              <p>
-                Hardware-in-the-loop execution confirms stable voltage tracking and practical robustness to step-like load perturbations.
-                Results align with the first-order design assumptions without requiring model complexity escalation.
-              </p>
-            </article>
           </section>
 
           <section class="split-section">
             <article>
-              <h2>Engineering Takeaways</h2>
-              <ul>
-                <li>Excitation signal design strongly conditions identification quality and downstream control reliability.</li>
-                <li>First-order modeling can outperform higher-order alternatives when implementation speed and robustness matter.</li>
-                <li>Sampling-time sensitivity must be quantified early to avoid misleading parameter interpretations.</li>
-                <li>Real hardware constraints, including voltage limits, should shape the final regulation strategy.</li>
-              </ul>
+              <h2>Load Influence in Open Loop</h2>
+              <p>
+                Figure 7 shows the real-time oscilloscope response when one or several loads are connected at the generator output.
+                At this stage no control law is active; the objective is to characterize the raw plant behavior under load changes.
+              </p>
             </article>
             <figure>
-              <img src="../assets/img/motor-generator/project_auto_9.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_9.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="PI controller validation oscilloscope traces" loading="lazy" />
-              <figcaption>Experimental validation of the PI controller maintaining output voltage despite load disturbances.</figcaption>
+              <img src="../assets/img/project_auto_7.png" alt="Oscilloscope load influence" loading="lazy" />
+              <figcaption>Open-loop oscilloscope response under load connection events.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Discrete PI Control Architecture</h2>
+              <p>
+                Figure 8 is the Simulink scheme used for the discretized PI control implementation.
+                This block structure defines the controller before final experimental validation.
+              </p>
+            </article>
+            <figure>
+              <img src="../assets/img/project_auto_8.png" alt="Closed-loop PI control architecture" loading="lazy" />
+              <figcaption>Simulink architecture of the discretized PI control loop.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Controlled Response under Load Changes</h2>
+              <p>
+                Figure 9 presents the real oscilloscope response once the PI controller is active and loads are connected at the output.
+                This result closes the workflow by comparing controlled behavior against the open-loop response shown in Figure 7.
+              </p>
+            </article>
+            <figure>
+              <img src="../assets/img/project_auto_9.png" alt="PI controller validation oscilloscope traces" loading="lazy" />
+              <figcaption>Experimental oscilloscope response with PI control and load perturbations.</figcaption>
             </figure>
           </section>
 
