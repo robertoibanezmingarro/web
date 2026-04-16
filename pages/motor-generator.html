@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motor–Generator System Identification and PI Control | Roberto Ibáñez Mingarro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a class="site-title" href="../index.html">Roberto Ibáñez Mingarro — Embedded Systems & Electronics</a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="./portfolio.html" data-nav="portfolio">Portfolio</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+
+        <div class="social-links" aria-label="Enlaces sociales">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.1c.53-1 1.83-2.2 3.77-2.2C19.2 8 21 10.1 21 14.1V24h-4v-8.6c0-2.05-.04-4.7-2.87-4.7-2.87 0-3.31 2.24-3.31 4.55V24h-4V8Z"/></svg>
+          </a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.74.5 12.21c0 5.18 3.3 9.57 7.88 11.12.58.11.8-.26.8-.58 0-.29-.01-1.06-.02-2.08-3.2.71-3.88-1.58-3.88-1.58-.52-1.36-1.28-1.72-1.28-1.72-1.05-.73.08-.72.08-.72 1.16.08 1.76 1.22 1.76 1.22 1.03 1.81 2.7 1.29 3.36.99.1-.76.4-1.29.72-1.59-2.56-.3-5.26-1.32-5.26-5.86 0-1.3.45-2.36 1.2-3.19-.12-.3-.52-1.51.12-3.15 0 0 .98-.32 3.2 1.22a10.73 10.73 0 0 1 5.82 0c2.22-1.54 3.2-1.22 3.2-1.22.64 1.64.24 2.85.12 3.15.74.83 1.2 1.89 1.2 3.2 0 4.55-2.7 5.56-5.28 5.86.41.36.78 1.08.78 2.19 0 1.58-.02 2.86-.02 3.25 0 .32.21.7.8.58A11.74 11.74 0 0 0 23.5 12.2C23.5 5.75 18.35.5 12 .5Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav aria-label="Navegación móvil">
+          <a href="../index.html" data-nav="home">Home</a>
+          <a href="./portfolio.html" data-nav="portfolio">Portfolio</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/robertoibanezmingarro/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://github.com/robertoibanezmingarro" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main project-page">
+      <section class="section-narrow project-hero">
+        <h1 class="page-title">Motor–Generator System Identification and PI Control</h1>
+        <div class="project-hero-grid">
+          <div class="project-hero-intro">
+            <p class="project-meta">Control Systems · System Identification · Embedded Experimentation</p>
+            <p class="project-abstract">
+              Full experimental identification of a real motor–generator chain, from black-box data collection to control-oriented modeling.
+              The workflow compares excitation signals, model orders, and sampling times to retain a practical first-order plant.
+              Design choices are driven by robustness, hardware limits, and implementation-ready control decisions.
+            </p>
+
+            <ul class="tech-chips" aria-label="Core technologies used in the project">
+              <li>System identification</li>
+              <li>MATLAB/Simulink</li>
+              <li>National Instruments</li>
+              <li>Frequency analysis</li>
+              <li>Discrete PI control</li>
+            </ul>
+          </div>
+
+          <aside class="project-spec-card" aria-label="Project specifications">
+            <dl>
+              <div><dt>Role</dt><dd>Control and experimentation engineer</dd></div>
+              <div><dt>Scope</dt><dd>Identification campaign, model validation, and closed-loop control</dd></div>
+              <div><dt>Focus</dt><dd>Model simplicity vs control usability under real constraints</dd></div>
+              <div><dt>Output</dt><dd>Validated PI regulation around a hardware-limited operating point</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <div class="section-narrow project-layout">
+        <aside class="project-toc" aria-label="On this page">
+          <p class="project-toc-title">On this page</p>
+          <nav>
+            <ol id="project-toc-list"></ol>
+          </nav>
+        </aside>
+
+        <section class="project-jump" aria-label="Jump to section">
+          <label for="project-jump-select">Jump to section</label>
+          <select id="project-jump-select">
+            <option value="">Select a section</option>
+          </select>
+        </section>
+
+        <div class="project-content" id="project-content">
+          <section class="split-section">
+            <article>
+              <h2>Global Architecture / Experimental Setup</h2>
+              <p>
+                The setup closes the loop between MATLAB/Simulink and National Instruments hardware for repeatable excitation and synchronized acquisition.
+                This architecture enables direct transition from test-bench measurements to control-oriented data processing.
+              </p>
+            </article>
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_1.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_1.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Experimental setup with Simulink and NI hardware" loading="lazy" />
+              <figcaption>Real-time experimental loop integrating MATLAB/Simulink with National Instruments hardware for closed-loop signal injection and acquisition.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_2.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_2.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Chirp identification validation" loading="lazy" />
+              <figcaption>Chirp-based identification capturing the dominant system dynamics with consistent time-domain fitting across model orders.</figcaption>
+            </figure>
+            <article>
+              <h2>Identification Methodology</h2>
+              <p>
+                The campaign evaluates MLBS, chirp, and multisine excitations over sampling times of 0.05 s, 0.01 s, and 0.002 s.
+                Model orders 1, 2, and 3 are estimated under the same protocol to isolate excitation and discretization effects.
+              </p>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Model Validation and Signal Comparison</h2>
+              <p>
+                Time-domain overlays show stable fitting with chirp and the strongest consistency with MLBS, while multisine remains less reliable.
+                Despite higher-order candidates, the first-order model is retained as the best engineering trade-off between fidelity and deployability.
+              </p>
+            </article>
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_3.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_3.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="MLBS validation best case" loading="lazy" />
+              <figcaption>MLBS excitation providing the most reliable identification, ensuring strong excitation over the full frequency band.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_4.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_4.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Multisine validation poor case" loading="lazy" />
+              <figcaption>Multisine excitation showing poor identification quality, highlighting sensitivity to signal design in system identification.</figcaption>
+            </figure>
+            <article>
+              <h2>Frequency-Domain Analysis</h2>
+              <p>
+                Bode inspection confirms first-order dominant behavior and supports reduced-order control design.
+                Cross-checks across excitation families prevent overfitting to one test profile and improve confidence in selected dynamics.
+              </p>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Load Influence Analysis</h2>
+              <p>
+                Load changes modify both static gain and pole location, proving that the plant cannot be treated as load-invariant.
+                This observation drives conservative controller tuning and operating-point-aware validation.
+              </p>
+            </article>
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_5.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_5.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Bode plot sampling time comparison" loading="lazy" />
+              <figcaption>Frequency response consistency across sampling times, confirming robustness of the identified first-order dynamics.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_6.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_6.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Identified transfer functions table" loading="lazy" />
+              <figcaption>Comparison of identified transfer functions across signals, sampling times, and model orders.</figcaption>
+            </figure>
+            <article>
+              <h2>Control Strategy (PI)</h2>
+              <p>
+                Since the plant has no integrator, PI control is selected to guarantee zero steady-state error on output voltage regulation.
+                Tuning prioritizes robustness and actuator realism over aggressive transient targets.
+              </p>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Experimental Validation</h2>
+              <p>
+                Closed-loop tests confirm disturbance rejection under variable loading, with regulation centered around 9 V due to hardware limits.
+                The 12 V target was intentionally relaxed to preserve repeatability and avoid non-representative stress conditions.
+              </p>
+            </article>
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_7.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_7.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Oscilloscope load influence" loading="lazy" />
+              <figcaption>Direct observation of output voltage variations under changing load conditions.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section reverse">
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_8.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_8.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="Closed-loop PI control architecture" loading="lazy" />
+              <figcaption>Discrete PI control loop implemented on the real system for voltage regulation.</figcaption>
+            </figure>
+            <article>
+              <h3>Closed-Loop Response</h3>
+              <p>
+                Hardware-in-the-loop execution confirms stable voltage tracking and practical robustness to step-like load perturbations.
+                Results align with the first-order design assumptions without requiring model complexity escalation.
+              </p>
+            </article>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Engineering Takeaways</h2>
+              <ul>
+                <li>Excitation signal design strongly conditions identification quality and downstream control reliability.</li>
+                <li>First-order modeling can outperform higher-order alternatives when implementation speed and robustness matter.</li>
+                <li>Sampling-time sensitivity must be quantified early to avoid misleading parameter interpretations.</li>
+                <li>Real hardware constraints, including voltage limits, should shape the final regulation strategy.</li>
+              </ul>
+            </article>
+            <figure>
+              <img src="../assets/img/motor-generator/project_auto_9.png" onerror="if(!this.dataset.f1){this.dataset.f1=1;this.src='../assets/img/project_auto_9.png';}else if(!this.dataset.f2){this.dataset.f2=1;this.src='../assets/img/modeling-simulation.jpg';}" alt="PI controller validation oscilloscope traces" loading="lazy" />
+              <figcaption>Experimental validation of the PI controller maintaining output voltage despite load disturbances.</figcaption>
+            </figure>
+          </section>
+
+          <section class="split-section">
+            <article>
+              <h2>Full Technical Article (PDF)</h2>
+              <p>
+                This page summarizes the engineering workflow. The complete PDF includes methodology details, identified models,
+                validation datasets, and control design evidence.
+              </p>
+            </article>
+            <div class="project-cta">
+              <h2>Open or Download</h2>
+              <p>Access the full technical dossier in PDF format.</p>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="../pdfs/Motor_Generator_Portfolio.pdf" download data-mg-pdf-link>Download Motor_Generator_Portfolio.pdf</a>
+                <a class="btn btn-secondary" href="../pdfs/Motor_Generator_Portfolio.pdf" target="_blank" rel="noopener" data-mg-pdf-link>Open PDF in new tab</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer"><nav><a href="../index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./resume.html">Resume</a><a href="./contact.html">Contact</a></nav><p>© 2026 Roberto Ibáñez Mingarro</p></footer>
+    <script>
+      (() => {
+        const content = document.querySelector('#project-content');
+        const tocList = document.querySelector('#project-toc-list');
+        const jumpSelect = document.querySelector('#project-jump-select');
+        if (!content || !tocList || !jumpSelect) return;
+
+        const headings = [...content.querySelectorAll('h2')];
+        const seen = new Map();
+        const slugify = (text) => text.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+
+        const sections = headings.map((heading) => {
+          const base = slugify(heading.textContent || 'section');
+          const count = seen.get(base) || 0;
+          seen.set(base, count + 1);
+          const id = count ? `${base}-${count + 1}` : base;
+          heading.id = heading.id || id;
+
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent || heading.id;
+          li.appendChild(link);
+          tocList.appendChild(li);
+
+          const option = document.createElement('option');
+          option.value = heading.id;
+          option.textContent = heading.textContent || heading.id;
+          jumpSelect.appendChild(option);
+
+          return { heading, link };
+        });
+
+        jumpSelect.addEventListener('change', (event) => {
+          const id = event.target.value;
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        const setActive = (id) => {
+          sections.forEach(({ link, heading }) => {
+            const isActive = heading.id === id;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) jumpSelect.value = id;
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.45, 0.8] }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+        if (sections[0]) setActive(sections[0].heading.id);
+
+        const resolvePdfLinks = async () => {
+          const links = [...document.querySelectorAll('[data-mg-pdf-link]')];
+          if (!links.length) return;
+
+          const candidates = [
+            '../pdfs/Motor_Generator_Portfolio.pdf',
+            '../assets/pdf/Motor_Generator_Portfolio.pdf',
+            '../pdfs/motor-generator-portfolio.pdf',
+            '../assets/pdf/motor-generator-portfolio.pdf',
+            '../pdfs/Motor-Generator_Portfolio.pdf',
+            '../assets/pdf/Motor-Generator_Portfolio.pdf'
+          ];
+
+          let resolved = '';
+          for (const url of candidates) {
+            try {
+              const response = await fetch(url, { method: 'HEAD' });
+              if (response.ok) {
+                resolved = url;
+                break;
+              }
+            } catch (error) {
+              // Ignore and continue trying the next candidate.
+            }
+          }
+
+          if (!resolved) {
+            links.forEach((link) => {
+              link.addEventListener('click', (event) => {
+                event.preventDefault();
+                alert('PDF file not found. Upload it to /pdfs or /assets/pdf with a supported filename.');
+              });
+            });
+            return;
+          }
+
+          links.forEach((link) => {
+            link.href = resolved;
+          });
+        };
+
+        resolvePdfLinks();
+
+      })();
+    </script>
+  </body>
+</html>
