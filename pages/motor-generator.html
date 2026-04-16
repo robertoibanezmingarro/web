@@ -120,6 +120,10 @@
               <h2>Chirp Validation</h2>
               <p>The chirp excitation provides a smooth frequency sweep, allowing a consistent capture of the system dynamics. The identified models show good agreement in the transient regime, confirming that the dominant behavior of the motor–generator system is well represented even with low-order models.</p>
             </article>
+            <figure>
+              <img src="../assets/img/project_auto_2.png" alt="Chirp identification validation" loading="lazy" />
+              <figcaption>Validation result for chirp-based identification.</figcaption>
+            </figure>
           </section>
 
           <section class="split-section">
@@ -142,6 +146,10 @@
               <h2>Multisine Validation</h2>
               <p>In contrast, the multisine excitation fails to properly capture the system behavior, producing poor fits and inconsistent dynamics. This highlights the strong dependency of identification quality on the excitation signal design, especially in real experimental conditions.</p>
             </article>
+            <figure>
+              <img src="../assets/img/project_auto_4.png" alt="Multisine validation poor case" loading="lazy" />
+              <figcaption>Validation result obtained with multisine excitation.</figcaption>
+            </figure>
           </section>
 
           <section class="split-section">
@@ -164,6 +172,10 @@
               <h2>Identified Transfer Functions</h2>
               <p>A systematic comparison of identified transfer functions across signals, sampling times, and model orders shows that increasing model complexity does not significantly improve accuracy. A first-order model is therefore retained as the optimal trade-off between simplicity, robustness, and practical usability.</p>
             </article>
+            <figure>
+              <img src="../assets/img/project_auto_6.png" alt="Identified transfer functions table" loading="lazy" />
+              <figcaption>Table of identified transfer functions (order 1 and order 2).</figcaption>
+            </figure>
           </section>
 
           <section class="split-section">
@@ -186,6 +198,10 @@
               <h2>Closed-Loop PI Architecture</h2>
               <p>The system is regulated using a discrete PI controller implemented in a closed-loop configuration. The control objective is to maintain a stable output voltage despite load variations, compensating for the absence of an integrator in the plant dynamics.</p>
             </article>
+            <figure>
+              <img src="../assets/img/project_auto_8.png" alt="Closed-loop PI control architecture" loading="lazy" />
+              <figcaption>Simulink architecture of the discretized PI control loop.</figcaption>
+            </figure>
           </section>
 
           <section class="split-section">
